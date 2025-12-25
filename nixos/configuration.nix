@@ -87,6 +87,7 @@
     description = "sancho";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      chatterino7
     #  kdePackages.kate
     #  thunderbird
     ];
