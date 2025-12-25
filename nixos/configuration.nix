@@ -1,12 +1,8 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
     ];
 
@@ -88,23 +84,17 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       chatterino7
-    #  kdePackages.kate
-    #  thunderbird
     ];
   };
 
-  # Install firefox.
   programs.firefox.enable = true;
 
   programs.steam.enable = true;
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
-   neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+   neovim
    typst
    gcc
    fastfetch
