@@ -94,11 +94,12 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-   neovim
-   typst
-   gcc
-   fastfetch
-   wget
+    tmux
+    neovim
+    typst
+    gcc
+    fastfetch
+    wget
   ];
 
   environment.shellAliases = {
