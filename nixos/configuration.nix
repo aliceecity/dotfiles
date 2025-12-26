@@ -100,6 +100,7 @@
         la = "ls -lha";
         v = "nvim";
         vi = "nvim";
+        ".." = "cd ..";
       };
     enableLsColors = true;
     enableCompletion = true;
