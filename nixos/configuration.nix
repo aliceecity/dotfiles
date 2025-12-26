@@ -85,6 +85,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sancho = {
     isNormalUser = true;
+    shell = "zsh";
     description = "sancho";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
@@ -101,6 +102,7 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   environment.systemPackages = with pkgs; [
+    zsh
     ripgrep
     fzf
     tmux
