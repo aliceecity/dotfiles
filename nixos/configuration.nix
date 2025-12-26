@@ -111,12 +111,14 @@
     vi = "nvim";
   };
 
-  programs.git.enable = true;
-  programs.git.config = {
-    init.defaultBranch = "main"; # woke
-    user.name = "alice";
-    user.email = "aliceecity@proton.me";
-    safe.directory = "/etc/nixos";
+  programs.git = {
+    enable = true;
+    config = {
+      init.defaultBranch = "main"; # woke
+      user.name = "alice";
+      user.email = "aliceecity@proton.me";
+      safe.directory = "/etc/nixos";
+    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
