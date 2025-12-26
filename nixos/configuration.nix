@@ -132,7 +132,11 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {.
+    enable = true;
+    settings.PermitRootLogin = false;
+    ports = [ 31200 ];
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
