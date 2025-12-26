@@ -95,7 +95,6 @@
 
   programs.zsh = {
     enable = true;
-    shellInit = "tmux";
     shellAliases = {
         l = "ls -lh";
         la = "ls -lha";
