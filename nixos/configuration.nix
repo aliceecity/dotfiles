@@ -115,9 +115,10 @@
     enable = true;
     config = {
       init.defaultBranch = "main"; # woke
-      user.name = "alice";
-      user.email = "aliceecity@proton.me";
-      safe.directory = "/etc/nixos";
+      user = {
+        name = "alice";
+        email = "aliceecity@proton.me";
+      };
     };
   };
 
