@@ -134,7 +134,7 @@
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
-    settings.PermitRootLogin = false;
+    settings.PermitRootLogin = "no";
     ports = [ 31200 ];
   };
 
