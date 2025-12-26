@@ -73,7 +73,7 @@
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
-
+  
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
@@ -93,6 +93,19 @@
     ];
   };
 
+  programs.zsh = {
+    enable = true;
+    shellInit = "tmux";
+    shellAliases = {
+        l = "ls -lh";
+        la = "ls -lha";
+        v = "nvim";
+        vi = "nvim";
+      };
+    enableLsColors = true;
+    enableCompletion = true;
+  };
+
   programs.firefox.enable = true;
 
   programs.steam.enable = true;
@@ -102,7 +115,6 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   environment.systemPackages = with pkgs; [
-    zsh
     ripgrep
     fzf
     tmux
@@ -113,13 +125,6 @@
     alacritty
     wget
   ];
-
-  environment.shellAliases = {
-    l = "ls -lh";
-    la = "ls -lha";
-    v = "nvim";
-    vi = "nvim";
-  };
 
   programs.git = {
     enable = true;
