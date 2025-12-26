@@ -1,4 +1,3 @@
 *.sh
 *.log
 nvim/
-hardware-configuration.nix
