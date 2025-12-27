@@ -89,6 +89,7 @@
     description = "sancho";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      discordo
       chatterino7
     ];
   };
