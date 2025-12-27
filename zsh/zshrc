@@ -14,3 +14,5 @@ PROMPT="%B%F{#5c47c9}[%n@%m:%~]%b%f "
 bindkey -e
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
+
+alias frf="nohup firefox >& /dev/null&"
