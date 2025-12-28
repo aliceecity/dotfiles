@@ -55,7 +55,7 @@
     okular
   ];
 
-  security.sudo.extraConfig = ''Defaults pwfeedback''
+  security.sudo.extraConfig = ''Defaults pwfeedback'';
 
   # Configure keymap in X11
   services.xserver.xkb = {
