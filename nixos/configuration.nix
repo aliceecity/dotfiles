@@ -145,13 +145,7 @@
 
   programs.git = {
     enable = true;
-    config = {
-      init.defaultBranch = "main"; # woke
-      user = {
-        name = "alice";
-        email = "aliceecity@proton.me";
-      };
-    };
+    config.init.defaultBranch = "main"; # woke
   };
 
   # Some programs need SUID wrappers, can be configured further or are
