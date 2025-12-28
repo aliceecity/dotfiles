@@ -55,6 +55,8 @@
     okular
   ];
 
+  security.sudo.extraConfig = ''Defaults pwfeedback''
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "es";
@@ -93,6 +95,7 @@
     description = "sancho";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      btop
       vlc
       discordo
       chatterino7
