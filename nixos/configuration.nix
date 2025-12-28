@@ -93,6 +93,7 @@
     description = "sancho";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      vlc
       discordo
       chatterino7
     ];
