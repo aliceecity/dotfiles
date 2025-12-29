@@ -46,6 +46,7 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
   environment.plasma6.excludePackages = with pkgs.kdePackages; [ 
+    dolphin
     kate
     elisa
     ark
@@ -135,7 +136,12 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  fonts.packages = with pkgs; [ 
+    nerd-fonts.fira-code
+  ];
+
   environment.systemPackages = with pkgs; [
+    yazi
     gnumake
     ripgrep
     fzf
