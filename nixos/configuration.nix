@@ -143,6 +143,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    fd # faster find
     yazi
     gnumake
     ripgrep
