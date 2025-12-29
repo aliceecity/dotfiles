@@ -95,6 +95,7 @@
     description = "sancho";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      streamlink
       btop
       vlc
       discordo
