@@ -46,6 +46,7 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
   environment.plasma6.excludePackages = with pkgs.kdePackages; [ 
+    gwenview
     dolphin
     kate
     elisa
@@ -96,6 +97,7 @@
     description = "sancho";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      qview
       streamlink
       btop
       vlc
