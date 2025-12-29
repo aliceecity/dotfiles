@@ -16,5 +16,6 @@ bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
 
 alias frf="nohup firefox >& /dev/null &"
+alias ":q"="exit"
 
 export EDITOR=nvim
