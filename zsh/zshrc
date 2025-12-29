@@ -17,5 +17,14 @@ bindkey '^[[1;5C' forward-word
 
 alias frf="nohup firefox >& /dev/null &"
 alias ":q"="exit"
+ttv(){
+  if [ -z $2 ]; then
+    qual="best"
+  else
+    qual="$2"
+  fi
+
+  nohup streamlink twitch.tv/"$1" "$qual" >& /dev/null &
+}
 
 export EDITOR=nvim
