@@ -143,6 +143,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    bat # nicer cat
     fd # faster find
     yazi
     gnumake
