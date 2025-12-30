@@ -31,5 +31,3 @@ ttv(){
 
   nohup streamlink twitch.tv/"$1" "$qual" >& /dev/null &
 }
-
-export EDITOR=nvim
