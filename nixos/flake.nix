@@ -24,7 +24,7 @@
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
 
-            home-manager.users.sancho = import ./home.nix;
+            home-manager.users.sancho = import ./users/sancho/home.nix;
           }
         ];
       };

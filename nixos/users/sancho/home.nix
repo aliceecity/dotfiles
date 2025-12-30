@@ -3,8 +3,8 @@
 {
 
   imports = [
-    ./home/zsh.nix
-    ./home/tmux.nix
+    ../../homeModules/zsh
+    ../../homeModules/tmux
   ];
 
   home.packages = with pkgs; [
