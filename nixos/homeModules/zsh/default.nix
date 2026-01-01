@@ -1,6 +1,6 @@
 { pkgs, config, ... }:
 
 {
-  home.file.".config/zsh/.zshrc".source = ./zshrc;
-  home.file.".zshenv".source = ./zshenv;
+  home.file.".config/zsh/.zshrc".source = ../../../zsh/zshrc;
+  home.file.".zshenv".source = ../../../zsh/zshenv;
 }

@@ -1,5 +1,5 @@
 { pkgs, config, ... }:
 
 {
-  home.file.".config/tmux/tmux.conf".source = ./tmux.conf;
+  home.file.".config/tmux/tmux.conf".source = ../../../tmux/tmux.conf;
 }
