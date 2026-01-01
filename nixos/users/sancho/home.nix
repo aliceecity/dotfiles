@@ -22,6 +22,7 @@
       user.name = "alice";
       user.email = "aliceecity@proton.me";
       init.defaultBranch = "main";
+      core.editor = "nvim";
     };
   };
 
