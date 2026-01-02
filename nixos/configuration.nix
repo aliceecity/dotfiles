@@ -115,7 +115,10 @@
 
   programs.git = {
     enable = true;
-    config.init.defaultBranch = "main"; # woke
+    config = {
+      init.defaultBranch = "main"; # woke
+      core.editor = "nvim";
+    };
   };
 
   # Enable the OpenSSH daemon.
