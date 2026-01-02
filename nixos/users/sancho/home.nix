@@ -8,6 +8,7 @@
   ];
 
   home.packages = with pkgs; [
+    yt-dlp
     qview
     streamlink
     btop
