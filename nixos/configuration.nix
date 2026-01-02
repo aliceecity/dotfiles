@@ -113,14 +113,6 @@
     wget
   ];
 
-  programs.git = {
-    enable = true;
-    config = {
-      init.defaultBranch = "main"; # woke
-      core.editor = "nvim";
-    };
-  };
-
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;

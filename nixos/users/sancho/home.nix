@@ -5,6 +5,7 @@
   imports = [
     ../../homeModules/zsh
     ../../homeModules/tmux
+    ../../homeModules/git
   ];
 
   home.packages = with pkgs; [
