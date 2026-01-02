@@ -1,19 +1,29 @@
-# The following lines were added by compinstall
-
-zstyle ':completion:*' completer _complete _ignored _approximate
-zstyle :compinstall filename '/home/sancho/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
 autoload -U colors && colors
 
 PROMPT="%B%F{#5c47c9}[%n@%m:%~]%b%f "
 
+zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
+zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
+
+eval "$(fzf --zsh)"
+
 bindkey -e
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
+HISTSIZE=5000
+HISTFILE="~/.zsh_history"
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
 path+=('/home/sancho/scripts')
 export PATH
