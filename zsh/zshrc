@@ -25,7 +25,7 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-path+=('/home/sancho/scripts')
+path+=("$HOME/dotfiles/scripts")
 export PATH
 
 alias l="ls -lh"
