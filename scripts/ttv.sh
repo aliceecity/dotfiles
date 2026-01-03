@@ -7,6 +7,7 @@ nicknames=(
   ["silver"]="silverrruns"
   ["mongey"]="bigbigmongey"
   ["bbm"]="bigbigmongey"
+  ["hax"]="hackingnoisess"
 )
 
 if [ -v nicknames["$1"] ]; then
