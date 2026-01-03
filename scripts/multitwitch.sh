@@ -1,5 +1,5 @@
 #!/bin/sh
 
 for stream in "$@"; do
-  ./ttv.sh "$stream" worst
+  ~/dotfiles/scripts/ttv.sh "$stream" worst
 done
