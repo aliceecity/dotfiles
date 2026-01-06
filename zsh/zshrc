@@ -2,8 +2,16 @@ autoload -U colors && colors
 
 PROMPT="%B%F{#5c47c9}[%n@%m:%~]%b%f "
 
-zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
+zstyle ":completion:*" matcher-list '' "m:{a-z}={A-Za-z}"
 zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
+
+autocorrect() {
+  zle .spell-word
+  zle .$WIDGET
+}
+zle -N accept-line autocorrect
+zle -N magic-space autocorrect
+bindkey ' ' magic-space
 
 eval "$(fzf --zsh)"
 
