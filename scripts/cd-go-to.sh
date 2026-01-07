@@ -8,9 +8,8 @@ dirs=`fd . ~ --type=d`
 selected=`echo "$dirs" | fzf --layout=reverse`
 
 if [ -n "$selected" ]; then
-  if [ "$proc" = "zsh" ]; then
-    tmux send-keys -t "$TMUX_PANE" 'cd ' "$selected" Enter ^L
-  else
-    tmux neww -c "$selected"
-  fi
+  case "$proc" in 
+    zsh|bash) tmux send-keys -t "$TMUX_PANE" 'cd ' "$selected" Enter ^L;;
+      *) tmux neww -c "$selected";;
+  esac
 fi
