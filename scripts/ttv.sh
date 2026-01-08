@@ -7,6 +7,7 @@ nicknames=(
   ["silver"]="silverrruns"
   ["mongey"]="bigbigmongey"
   ["bbm"]="bigbigmongey"
+  ["beef"]="beefsalad"
   ["hax"]="hackingnoisess"
 )
 
