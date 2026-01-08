@@ -1,3 +1,3 @@
 #!/bin/sh
 
-nohup firefox "$@" >& /dev/null &
+setsid firefox "$@" >& /dev/null &
