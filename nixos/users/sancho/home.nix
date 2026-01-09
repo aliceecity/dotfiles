@@ -9,6 +9,7 @@
   ];
 
   home.packages = with pkgs; [
+    vesktop
     waybar
     hyprpaper
     hyprlauncher
