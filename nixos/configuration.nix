@@ -30,26 +30,24 @@
     LC_TIME = "es_ES.UTF-8";
   };
 
-  # Opps
-
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [ 
-    gwenview
-    dolphin
-    kate
-    elisa
-    ark
-    kwalletmanager
-    # xterm //IDK
-    konsole
-    okular
-  ];
-
-  services.xserver.xkb = {
-    layout = "es";
-    variant = "nodeadkeys";
+  programs.hyprland = {
+    enable = true;
+    # withUWSM = true;
   };
+
+  services.seatd.enable = true;
+  #
+  # services.greetd = {
+  #   enable = true;
+  #   settings = {
+  #     default_session.command = "bash -lc Hyprland";
+  #   };
+  # };
+
+  # services.xserver.xkb = {
+  #   layout = "es";
+  #   variant = "nodeadkeys";
+  # };
 
   security.sudo.extraConfig = ''Defaults pwfeedback'';
 
@@ -70,7 +68,7 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "sancho";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "video" "input" "seat" "networkmanager" "wheel" ];
   };
 
   programs.zsh.enable = true;
