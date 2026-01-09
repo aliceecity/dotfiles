@@ -7,6 +7,7 @@
     ../../homeModules/tmux
     ../../homeModules/git
     ../../homeModules/hypr
+    ../../homeModules/alacritty
     ../../homeModules/waybar
   ];
 
