@@ -30,6 +30,11 @@
     LC_TIME = "es_ES.UTF-8";
   };
 
+  services.xserver.xkb = {
+    layout = "es";
+      variant = "nodeadkeys";
+  };
+
   programs.hyprland = {
     enable = true;
     # withUWSM = true;
