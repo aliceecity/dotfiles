@@ -9,6 +9,7 @@
   ];
 
   home.packages = with pkgs; [
+    waybar
     hyprlauncher
     yt-dlp
     qview

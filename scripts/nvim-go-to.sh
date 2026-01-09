@@ -1,8 +1,9 @@
 #!/bin/sh
 
 files=`fd . ~ --type=f`
+configdir=`fd . ~/.config`
 
-selected=`echo "$files" | fzf --layout=reverse`
+selected=`echo "$files" "$configdir" | fzf --layout=reverse`
 
 if [ -n "$selected" ]; then
   filename=`echo "$selected" | awk -F "/" '{print $NF}'`
