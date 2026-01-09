@@ -1,0 +1,38 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-right": ["network", "battery", "pulseaudio", "clock" ],
+  "modules-left": ["hyprland/workspaces"],
+
+  "hyprland/workspaces":{
+    "format": "{name}"
+  },
+
+  "clock": {
+    "format": "{:%Y-%m-%d %H:%M} "
+  },
+
+  "battery": {
+    "format": " 󰁹 {capacity}%",
+    "path": "/sys/class/power_supply/BAT0",
+    "tooltip": true
+  },
+
+  "network": {
+    "interface": "wlo1",
+    "format-wifi": "{icon}  {essid}",
+    "format-disconnected": "󰖪  Network down",
+    "format-icons": {
+      "wifi": ["󰤟", "󰤢", "󰤥", "󰤨"]
+    }
+  },
+
+  "pulseaudio": {
+    "format": " {icon} {volume}% ",
+    "format-muted": " 󰖁 0% ",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "scroll-step": 5
+  }
+}

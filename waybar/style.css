@@ -1,0 +1,21 @@
+@define-color bg-color #17141a;
+@define-color fg-color #5c47c9;
+
+* {
+  background-color: @bg-color;
+  color: @fg-color;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 20px;
+}
+
+#workspaces button {
+  border-color: @bg-color;
+  border-width: 2px;
+  border-radius: 0;
+}
+
+#workspaces button.active {
+  border-color: @fg-color;
+  border-width: 2px;
+  border-radius: 0;
+}

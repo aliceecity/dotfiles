@@ -6,6 +6,8 @@
     ../../homeModules/zsh
     ../../homeModules/tmux
     ../../homeModules/git
+    ../../homeModules/hypr
+    ../../homeModules/waybar
   ];
 
   home.packages = with pkgs; [
