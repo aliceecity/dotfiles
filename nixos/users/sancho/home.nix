@@ -9,6 +9,7 @@
   ];
 
   home.packages = with pkgs; [
+    hyprlauncher
     yt-dlp
     qview
     streamlink
