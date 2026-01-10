@@ -12,6 +12,7 @@
   ];
 
   home.packages = with pkgs; [
+    brightnessctl
     waybar
     hyprpaper
     hyprlauncher

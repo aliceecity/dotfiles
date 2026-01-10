@@ -1,11 +1,18 @@
 {
   "layer": "top",
   "position": "top",
-  "modules-right": ["network", "battery", "pulseaudio", "clock" ],
+  "modules-right": ["network", "backlight", "battery", "pulseaudio", "clock" ],
   "modules-left": ["hyprland/workspaces"],
 
   "hyprland/workspaces":{
     "format": "{name}"
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": " {icon} {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "scroll-step": 5
   },
 
   "clock": {
