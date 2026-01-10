@@ -35,7 +35,7 @@ vim.o.shiftwidth = 2
 
 vim.o.inccommand = 'split'
 
-vim.o.cursorline = true
+vim.o.cursorline = false
 vim.o.scrolloff = 10
 
 vim.o.confirm = true

@@ -2,6 +2,13 @@ require("alice.options")
 require("alice.keymaps")
 require("alice.lazy-init")
 
+vim.cmd [[
+  highlight Normal guibg=none
+  highlight NonText guibg=none
+  highlight NormalNC guibg=none
+  highlight EndOfBuffer guibg=none
+]]
+
 function poorTypstPreview()
   local file = vim.fn.expand("%:p")
   if file == "" then
