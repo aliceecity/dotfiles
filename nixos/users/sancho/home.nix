@@ -21,7 +21,7 @@
     streamlink
     btop
     vlc
-    discordo
+    chatterino7
   ];
 
   programs.git = {
