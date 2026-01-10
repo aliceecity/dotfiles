@@ -1,0 +1,30 @@
+// 17141a
+* {
+    bg: rgba(23, 20, 26, 0.15);
+    fg: #5c47c9;
+
+    background-color: @bg;
+    text-color:       @fg;
+}
+
+element selected {
+  border: 2px;
+  border-color: @fg;
+}
+
+inputbar {
+    background-color: @bg;
+    padding: 8px;
+}
+
+listview {
+    lines: 8;
+}
+
+element {
+    padding: 6px;
+}
+
+configuration {
+  display-drun: "";
+}

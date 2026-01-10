@@ -15,7 +15,7 @@
     brightnessctl
     waybar
     hyprpaper
-    hyprlauncher
+    rofi
     yt-dlp
     qview
     streamlink
