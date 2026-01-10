@@ -12,7 +12,6 @@
   ];
 
   home.packages = with pkgs; [
-    vesktop
     waybar
     hyprpaper
     hyprlauncher
@@ -22,7 +21,6 @@
     btop
     vlc
     discordo
-    chatterino7
   ];
 
   programs.git = {
