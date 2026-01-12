@@ -1,6 +1,6 @@
 #!/bin/sh
 
-files=`fd . ~ --type=f`
+files=`fd . ~ --type f | grep -Ev '\.(png|jpe?g|gif|webp|svg|pdf|zip|tar|gz|bz2|xz|7z|mp[34]|wav|flac|mkv|avi|exe|dll|so|bin|iso|dmg)$'`
 
 selected=`echo "$files" | fzf --layout=reverse`
 
