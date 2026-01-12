@@ -1,6 +1,6 @@
 {
   "layer": "top",
-  "position": "top",
+  "position": "bottom",
   "modules-right": ["network", "backlight", "battery", "pulseaudio", "clock" ],
   "modules-left": ["hyprland/workspaces"],
 
