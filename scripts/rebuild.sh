@@ -2,6 +2,7 @@
 
 pushd ~/dotfiles/nixos >& /dev/null
 
+git diff -U0 '*.nix'
 tmux split-window -v "watch -n .1 tail ~/dotfiles/nixos/nixos-switch.log"
 tmux select-pane -t 1
 sudo nixos-rebuild switch --flake . &> nixos-switch.log || (
