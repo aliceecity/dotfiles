@@ -5,6 +5,7 @@
   imports = [
     ../../homeModules/zsh
     ../../homeModules/tmux
+    ../../homeModules/nvim
     ../../homeModules/git
     ../../homeModules/hypr
     ../../homeModules/alacritty
