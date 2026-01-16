@@ -1,7 +1,7 @@
 #!/bin/sh
 
 result=$(
-  fd . ~ --type=f |
+  rg -l --no-ignore "" ~ |
     fzf --layout=reverse \
         --phony \
         --print-query \
