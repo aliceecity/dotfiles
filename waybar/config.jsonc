@@ -19,10 +19,23 @@
     "format": "{:%Y-%m-%d %H:%M} "
   },
 
+
   "battery": {
-    "format": " 󰁹 {capacity}%",
-    "path": "/sys/class/power_supply/BAT0",
-    "tooltip": true
+    "format": " {icon} {capacity}%",
+    "format-charging": " 󰂄 {capacity}%",
+    "format-plugged": " 󰂄 {capacity}%",
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ]
   },
 
   "network": {
