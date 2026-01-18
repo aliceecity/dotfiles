@@ -19,7 +19,6 @@
     rofi
     yt-dlp
     qview
-    streamlink
     btop
     vlc
     chatterino7
