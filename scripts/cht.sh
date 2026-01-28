@@ -5,7 +5,7 @@ utils=`echo "awk,sed,find"`
 
 choice=`echo "$langs""$utils" | tr "," "\n" | fzf --layout=reverse`
 
-if [ -n "$choice" ];
+if [ -n "$choice" ]; then
   read -p "[cht.sh/$choice] " query
 
   if echo "$langs" | grep -qs "$choice" ; then
