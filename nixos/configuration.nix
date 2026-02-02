@@ -100,8 +100,8 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    bat # nicer cat
-    fd # faster find
+    bat
+    fd
     yazi
     gnumake
     ripgrep
