@@ -9,7 +9,9 @@ if [ "$cwd" != "$HOME" ]; then
   dirscurr=`fd . "$cwd" --type d -I -H`
 fi
 
-dirs=$(printf '%s\n' "$dirshome" "$dirscurr")
+dirs=$(printf '%s\n' "$dirshome" "$dirscurr" | \
+  grep -Ev '/(jason|target)/'
+)
 
 selected=`echo "$dirs" | fzf --layout=reverse`
 
