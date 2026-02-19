@@ -14,6 +14,7 @@
 
   home.packages = with pkgs; [
     grim
+    nestopia-ue
     slurp
     wl-clipboard
     brightnessctl
