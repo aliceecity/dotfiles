@@ -104,6 +104,8 @@
     fd
     yazi
     gnumake
+    unzip
+    zip
     ripgrep
     fzf
     tmux
