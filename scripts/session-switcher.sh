@@ -2,7 +2,7 @@
 
 sessions=$(tmux list-sessions | awk -F "(" '{print $1$3}' | tr -d ")")
 
-result=$(printf "%s\n" "$sessions" "new" | fzf --layout reverse | awk '{print $1}' | tr -d ":")
+result=$(printf "%s\n" "$sessions" "new" | fzf --layout reverse | awk -F ":" '{print $1}')
 
 if [ -n "$result" ]; then
   if [ "$result" != "new" ]; then
