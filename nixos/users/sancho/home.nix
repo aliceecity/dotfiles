@@ -10,6 +10,7 @@
     ../../homeModules/hypr
     ../../homeModules/alacritty
     ../../homeModules/waybar
+    ../../homeModules/ssh
   ];
 
   home.packages = with pkgs; [

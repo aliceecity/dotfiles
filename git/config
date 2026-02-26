@@ -1,0 +1,12 @@
+[init]
+    defaultBranch = main
+
+[core]
+    editor = nvim
+
+[user]
+    name = alice
+    email = aliceecity@proton.me
+
+[includeIf "gitdir:~/uni/"]
+    path = ~/.config/git/config-uni
