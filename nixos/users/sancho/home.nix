@@ -27,15 +27,8 @@
     btop
     vlc
     chatterino7
+    git
   ];
-
-  programs.git = {
-    enable = true;
-    settings = {
-      user.name = "alice";
-      user.email = "aliceecity@proton.me";
-    };
-  };
 
   programs.firefox.enable = true;
 
