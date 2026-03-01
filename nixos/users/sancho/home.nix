@@ -17,6 +17,7 @@
     grim
     nestopia-ue
     slurp
+    vesktop
     wl-clipboard
     brightnessctl
     waybar
