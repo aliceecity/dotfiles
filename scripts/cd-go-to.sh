@@ -13,7 +13,7 @@ dirs=$(printf '%s\n' "$dirshome" "$dirscurr" | \
   grep -Ev '/(jason|target)/'
 )
 
-selected=`echo "$dirs" | fzf --layout=reverse`
+selected=`echo "$dirs" | fzf --layout=reverse --preview="ls --color=always {}"`
 
 if [ -n "$selected" ]; then
   case "$proc" in

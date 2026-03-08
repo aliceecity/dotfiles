@@ -11,7 +11,7 @@ files=$(printf '%s\n' "$fileshome" "$filescurr" | \
   grep -Ev '/(jason|target)/'
 )
 
-selected=`echo "$files" | fzf --layout=reverse`
+selected=`echo "$files" | fzf --layout=reverse --preview='bat --color=always --style=plain {}'`
 
 if [ -n "$selected" ]; then
   filename=`echo "$selected" | awk -F "/" '{print $NF}'`
