@@ -17,7 +17,7 @@ selected=`echo "$dirs" | fzf --layout=reverse --preview="ls --color=always {}"`
 
 if [ -n "$selected" ]; then
   case "$proc" in
-    zsh|bash) tmux send-keys -t "$TMUX_PANE" 'cd ' "$selected" Enter ^L;;
+    zsh|bash) tmux send-keys -t "$TMUX_PANE" ^A ^K 'cd ' "$selected" Enter ^L;;
       *) tmux neww -c "$selected";;
   esac
 fi
