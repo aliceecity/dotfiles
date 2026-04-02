@@ -1,8 +1,9 @@
 { pkgs, config, ... }:
 
+let
+  dotfiles = "${config.home.homeDirectory}/dotfiles";
+in
 {
-  home.file.".config/hypr" = {
-    source = ../../../hypr;
-    recursive = true;
-  };
+  home.file.".config/hypr".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/hypr";
 }
