@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 let
-  dotfiles = "${config.home.homeDirectory}/dotfiles";
+  dotfiles = "${config.home.homeDirectory}/dotfiles/configs";
 in
 {
   home.file.".config/zsh/.zshrc".source =
