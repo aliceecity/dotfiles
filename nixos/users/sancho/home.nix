@@ -14,15 +14,8 @@
   ];
 
   home.packages = with pkgs; [
-    grim
     nestopia-ue
-    slurp
     vesktop
-    wl-clipboard
-    brightnessctl
-    waybar
-    swaybg
-    rofi
     yt-dlp
     qview
     btop
