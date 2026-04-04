@@ -22,6 +22,7 @@
     vlc
     chatterino7
     git
+    ffmpeg
   ];
 
   programs.firefox.enable = true;
