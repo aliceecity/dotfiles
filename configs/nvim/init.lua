@@ -152,6 +152,7 @@ vim.cmd [[
   highlight NonText guibg=none
   highlight NormalNC guibg=none
   highlight EndOfBuffer guibg=none
+  highlight SignColumn guibg=none
 ]]
 
 vim.api.nvim_create_autocmd('TextYankPost', {
