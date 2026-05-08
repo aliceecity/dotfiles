@@ -53,6 +53,23 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('n', '<leader>w', '<cmd>:w <CR>', { desc = 'write' })
 vim.keymap.set('n', '<leader>q', '<cmd>:q <CR>', { desc = 'quit' })
+vim.keymap.set({'v', 'x' }, '<leader>n', ':norm ', { desc = 'norm' })
+vim.keymap.set('n', '<leader>n', ':%norm ', { desc = '%norm' })
+vim.keymap.set("v", "<leader>s", function()
+  vim.cmd('normal! "zy')
+  local selection = vim.fn.escape(vim.fn.getreg("z"), [[\/.*$^~[]])
+
+  local cmd = ":%s/" .. selection .. "//g"
+
+  vim.fn.feedkeys(cmd, "n")
+
+  -- move cursor left twice so you're between the slashes
+  vim.api.nvim_feedkeys(
+    vim.api.nvim_replace_termcodes("<Left><Left>", true, false, true),
+    "n",
+    false
+  )
+end, { desc = "Substitute selected text globally" })
 
 -- Set up Lazy
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
