@@ -115,13 +115,28 @@
     fastfetch
     alacritty
     wget
+
+    vesktop
+    qview
+    btop
+    vlc
+    git
+    ffmpeg
+
+    grim
+    rofi
+    slurp
+    swaybg
+    wl-clipboard
+    brightnessctl
+
+    waybar
   ];
 
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
     settings.PermitRootLogin = "no";
-    ports = [ 31200 ];
   };
 
   system.stateVersion = "25.05";
