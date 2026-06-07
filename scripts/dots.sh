@@ -44,6 +44,7 @@ case "$user" in
     sl nvim
     sl git
     sl hypr/hyprland.conf
+    hyprctl reload &> /dev/null
     sl alacritty
     sl waybar
     sl ssh/config .ssh/config

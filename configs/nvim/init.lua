@@ -55,7 +55,7 @@ vim.keymap.set('n', '<leader>w', '<cmd>:w <CR>', { desc = 'write' })
 vim.keymap.set('n', '<leader>q', '<cmd>:q <CR>', { desc = 'quit' })
 vim.keymap.set({'v', 'x' }, '<leader>n', ':norm ', { desc = 'norm' })
 vim.keymap.set('n', '<leader>n', ':%norm ', { desc = '%norm' })
-vim.keymap.set("v", "<leader>s", function()
+vim.keymap.set({'v', 'x'}, "<leader>s", function()
   vim.cmd('normal! "zy')
   local selection = vim.fn.escape(vim.fn.getreg("z"), [[\/.*$^~[]])
 
