@@ -1,6 +1,5 @@
-// 17141a
 * {
-    bg: #000000;
+    bg: #202020;
     fg: #7d7c78;
 
     background-color: @bg;
