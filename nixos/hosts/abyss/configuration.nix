@@ -103,6 +103,7 @@
 
      waywall
      prismlauncher
+     jdk25
   ];
 
   programs.hyprland.enable = true;
