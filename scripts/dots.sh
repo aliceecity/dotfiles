@@ -39,6 +39,7 @@ function sl() {
 case "$user" in
   reg)
     sl zsh/zshrc .config/zsh/.zshrc
+    sl zsh/abyssrc .config/zsh/prompt
     sl zsh/zshenv .zshenv
     sl tmux/tmux.conf
     sl tmux/abyss.conf .config/tmux/colors.conf
@@ -53,6 +54,7 @@ case "$user" in
   ;;
   sancho)
     sl zsh/zshrc .config/zsh/.zshrc
+    sl zsh/letherc .config/zsh/prompt
     sl zsh/zshenv .zshenv
     sl tmux/tmux.conf
     sl tmux/lethe.conf .config/tmux/colors.conf
