@@ -1,6 +1,7 @@
 require("keybinds")({
   terminal = "alacritty",
-  main_monitor = "HDMI-A-1"
+  main_monitor = "HDMI-A-1",
+  rofi_theme = "abyss.rasi"
 })
 
 -- Main monitor

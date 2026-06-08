@@ -1,0 +1,30 @@
+// 17141a
+* {
+    bg: #000000;
+    fg: #7d7c78;
+
+    background-color: @bg;
+    text-color:       @fg;
+}
+
+element selected {
+  border: 2px;
+  border-color: @fg;
+}
+
+inputbar {
+    background-color: @bg;
+    padding: 8px;
+}
+
+listview {
+    lines: 8;
+}
+
+element {
+    padding: 6px;
+}
+
+configuration {
+  display-drun: "";
+}

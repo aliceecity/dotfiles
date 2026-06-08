@@ -1,6 +1,7 @@
 return function (args)
   local terminal = args.terminal
   local main_monitor = args.main_monitor
+  local rofi_theme = args.rofi_theme
 
   hl.bind("SUPER + Q", hl.dsp.exec_cmd(terminal))
   hl.bind("SUPER + B", hl.dsp.exec_raw("firefox"))
@@ -34,7 +35,7 @@ return function (args)
 
   hl.bind("SUPER + Tab", hl.dsp.window.cycle_next())
 
-  hl.bind("SUPER + C", hl.dsp.exec_cmd("rofi -show drun -theme ~/dotfiles/configs/rofi/colors.rasi"))
+  hl.bind("SUPER + C", hl.dsp.exec_cmd("rofi -show drun -theme ~/dotfiles/configs/rofi/" .. rofi_theme))
 
   for i=1,9 do
     hl.bind("SUPER + " .. i, function() 
