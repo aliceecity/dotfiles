@@ -25,9 +25,11 @@ hl.workspace_rule({workspace = "name:S", monitor = "DP-1"})
 local terminal = "alacritty"
 
 hl.on("hyprland.start", function () 
-  hl.exec_cmd(terminal)
+  hl.exec_cmd(terminal .. " -e tmux", {workspace = "1"})
+  hl.exec_cmd("firefox", {workspace = "2", monitor = "HDMI-A-1"})
+  hl.dispatch(hl.dsp.focus({workspace = "3"}))
+  hl.exec_cmd("vesktop")
   hl.exec_cmd("waybar")
-  hl.exec_cmd("firefox")
   hl.exec_cmd("swaybg -i ~/dotfiles/wallpaper.jpg -m fill")
 end)
 
@@ -49,6 +51,10 @@ hl.config({
     numlock_by_default = true,
     repeat_rate = 50,
     repeat_delay = 200,
+  },
+
+  cursor = {
+    no_hardware_cursors = true
   },
 
   animations = {
