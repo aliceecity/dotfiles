@@ -1,5 +1,5 @@
 {
-  description = "Sancho";
+  description = "hi";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-25.11";
@@ -11,7 +11,14 @@
       lethe = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ 
-          ./configuration.nix 
+          ./hosts/lethe/configuration.nix 
+        ];
+      };
+
+      abyss = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ 
+          ./hosts/abyss/configuration.nix 
         ];
       };
     };
