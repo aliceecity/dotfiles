@@ -83,6 +83,7 @@
      fzf
      tmux
      fastfetch
+     hyfetch # this fetching shit gets serious
      alacritty
      wget
 
@@ -92,13 +93,16 @@
      vlc
      git
      ffmpeg
-     
+
      grim
      rofi
      slurp
      swaybg
      wl-clipboard
      waybar
+
+     waywall
+     prismlauncher
   ];
 
   programs.hyprland.enable = true;
@@ -111,7 +115,5 @@
     settings.PermitRootLogin = "no";
   };
 
-
   system.stateVersion = "26.05";
-
 }

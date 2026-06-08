@@ -48,7 +48,7 @@ hl.config({
 
   input = {
     kb_layout = "es",
-    kb_variant = ",nodeadkeys",
+    kb_variant = "nodeadkeys",
     numlock_by_default = true,
     repeat_rate = 50,
     repeat_delay = 200,
