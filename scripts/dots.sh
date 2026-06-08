@@ -43,7 +43,8 @@ case "$user" in
     sl tmux/tmux.conf
     sl nvim
     sl git
-    sl hypr/hyprland.conf
+    sl hypr/keybinds.lua
+    sl hypr/abyss.lua .config/hypr/hyprland.lua
     hyprctl reload &> /dev/null
     sl alacritty
     sl waybar
@@ -55,7 +56,8 @@ case "$user" in
     sl tmux/tmux.conf
     sl nvim
     sl git
-    sl hypr/hyprland.conf
+    sl hypr/keybinds.lua
+    sl hypr/lethe.lua .config/hypr/hyprland.lua
     hyprctl reload &> /dev/null
     sl alacritty
     sl waybar
