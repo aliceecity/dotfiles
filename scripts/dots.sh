@@ -2,7 +2,7 @@
 
 dots_dir=$(realpath "$0" | awk -F'/' -v OFS='/' '{NF-=2}1')
 
-user=$(whoami)
+host=$(hostname)
 
 if [[ "$1" == "-d" ]]; then
   dry="true"
@@ -36,8 +36,8 @@ function sl() {
   fi
 }
 
-case "$user" in
-  reg)
+case "$host" in
+  abyss)
     sl zsh/zshrc .config/zsh/.zshrc
     sl zsh/abyssrc .config/zsh/prompt
     sl zsh/zshenv .zshenv
@@ -53,7 +53,7 @@ case "$user" in
     sl waybar/abyss.css .config/waybar/style.css
     sl ssh/config .ssh/config
   ;;
-  sancho)
+  lethe)
     sl zsh/zshrc .config/zsh/.zshrc
     sl zsh/letherc .config/zsh/prompt
     sl zsh/zshenv .zshenv
@@ -70,6 +70,6 @@ case "$user" in
     sl ssh/config .ssh/config
   ;;
   *)
-    echo "Unrecognized user."
+    echo "Unrecognized host."
   ;;
 esac
