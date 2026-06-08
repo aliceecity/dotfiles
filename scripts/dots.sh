@@ -41,6 +41,7 @@ case "$user" in
     sl zsh/zshrc .config/zsh/.zshrc
     sl zsh/zshenv .zshenv
     sl tmux/tmux.conf
+    sl tmux/abyss.conf .config/tmux/colors.conf
     sl nvim
     sl git
     sl hypr/keybinds.lua
@@ -54,6 +55,7 @@ case "$user" in
     sl zsh/zshrc .config/zsh/.zshrc
     sl zsh/zshenv .zshenv
     sl tmux/tmux.conf
+    sl tmux/lethe.conf .config/tmux/colors.conf
     sl nvim
     sl git
     sl hypr/keybinds.lua
