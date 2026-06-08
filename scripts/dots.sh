@@ -37,6 +37,18 @@ function sl() {
 }
 
 case "$user" in
+  reg)
+    sl zsh/zshrc .config/zsh/.zshrc
+    sl zsh/zshenv .zshenv
+    sl tmux/tmux.conf
+    sl nvim
+    sl git
+    sl hypr/hyprland.conf
+    hyprctl reload &> /dev/null
+    sl alacritty
+    sl waybar
+    sl ssh/config .ssh/config
+  ;;
   sancho)
     sl zsh/zshrc .config/zsh/.zshrc
     sl zsh/zshenv .zshenv
