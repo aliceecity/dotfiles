@@ -39,7 +39,6 @@
   },
 
   "network": {
-    "interface": "wlo1",
     "format-wifi": "{icon}  {essid}",
     "format-disconnected": "󰖪  Network down",
     "format-icons": {

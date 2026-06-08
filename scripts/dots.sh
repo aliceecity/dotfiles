@@ -49,7 +49,8 @@ case "$user" in
     sl hypr/abyss.lua .config/hypr/hyprland.lua
     hyprctl reload &> /dev/null
     sl alacritty
-    sl waybar
+    sl waybar/config.jsonc
+    sl waybar/abyss.css .config/waybar/style.css
     sl ssh/config .ssh/config
   ;;
   sancho)
@@ -64,7 +65,8 @@ case "$user" in
     sl hypr/lethe.lua .config/hypr/hyprland.lua
     hyprctl reload &> /dev/null
     sl alacritty
-    sl waybar
+    sl waybar/config.jsonc
+    sl waybar/lethe.css .config/waybar/style.css
     sl ssh/config .ssh/config
   ;;
   *)
