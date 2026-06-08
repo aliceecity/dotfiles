@@ -3,7 +3,7 @@ return function (args)
   local main_monitor = args.main_monitor
 
   hl.bind("SUPER + Q", hl.dsp.exec_cmd(terminal))
-  hl.bind("SUPER + C", hl.dsp.exec_raw("firefox"))
+  hl.bind("SUPER + B", hl.dsp.exec_raw("firefox"))
   hl.bind("SUPER + R", hl.dsp.exec_raw("hyprctl reload"))
 
   hl.bind("SUPER + X", hl.dsp.window.close())
