@@ -1,6 +1,6 @@
 require("keybinds")({
   terminal = "alacritty",
-  main_monitor = "eDP-1"
+  main_monitor = "eDP-1",
   rofi_theme = "lethe.rasi"
 })
 
