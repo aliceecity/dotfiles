@@ -7,3 +7,11 @@ Host github-uni
     HostName github.com
     User git
     IdentityFile ~/.ssh/id_ed25519_uni
+
+Host abyss
+    HostName 192.168.1.36
+    User reg
+
+Host lethe
+    HostName 192.168.1.43
+    User sancho
