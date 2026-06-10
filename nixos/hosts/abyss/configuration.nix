@@ -86,6 +86,7 @@
      hyfetch # this fetching shit gets serious
      alacritty
      wget
+     syncthing
 
      vesktop
      qview

@@ -117,6 +117,7 @@
     fastfetch
     alacritty
     wget
+    syncthing
 
     vesktop
     qview
