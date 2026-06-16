@@ -28,9 +28,13 @@ local terminal = "alacritty"
 hl.on("hyprland.start", function () 
   hl.exec_cmd(terminal .. " -e tmux", {workspace = "1"})
   hl.exec_cmd("firefox", {workspace = "2"})
+  hl.exec_cmd("vesktop", {workspace = "3"})
   hl.exec_cmd("waybar")
   hl.exec_cmd("swaybg -i ~/dotfiles/wallpaper.jpg -m fill")
+  hl.dsp.focus({workspace = "1"})
 end)
+
+hl.window_rule({match = {title = "Discord"}, workspace = "3 silent"})
 
 hl.config({
   general = {
@@ -46,7 +50,7 @@ hl.config({
 
   input = {
     kb_layout = "es",
-    kb_variant = "nodeadkeys",
+    kb_variant = ",nodeadkeys",
     numlock_by_default = true,
     repeat_rate = 50,
     repeat_delay = 200,

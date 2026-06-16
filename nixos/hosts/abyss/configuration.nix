@@ -1,5 +1,7 @@
-{ config, pkgs, ... }:
-
+{ config, pkgs, inputs, ... }:
+let
+  mcsrPkgs = inputs.mcsr-nixos.packages.${pkgs.stdenv.hostPlatform.system};
+in
 {
   imports =
     [
@@ -71,7 +73,7 @@
     nerd-fonts.fira-code
   ];
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
      neovim
      gcc
      bat
@@ -104,7 +106,9 @@
 
      waywall
      prismlauncher
-     jdk25
+     jdk21
+  ]) ++ [
+     mcsrPkgs.ninjabrain-bot
   ];
 
   programs.hyprland.enable = true;
