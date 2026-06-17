@@ -5,6 +5,8 @@ return function (args)
 
   hl.bind("SUPER + Q", hl.dsp.exec_cmd(terminal))
   hl.bind("SUPER + B", hl.dsp.exec_raw("firefox"))
+  hl.bind("SUPER + S", hl.dsp.exec_raw("steam"))
+  hl.bind("SUPER + V", hl.dsp.exec_raw("vesktop"))
   hl.bind("SUPER + R", hl.dsp.exec_raw("hyprctl reload"))
 
   hl.bind("SUPER + X", hl.dsp.window.close())
