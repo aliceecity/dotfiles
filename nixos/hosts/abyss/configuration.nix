@@ -107,6 +107,7 @@ in
      waywall
      prismlauncher
      jdk21
+     obs-studio
   ]) ++ [
      mcsrPkgs.ninjabrain-bot
   ];

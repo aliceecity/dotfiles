@@ -52,6 +52,7 @@ case "$host" in
     sl waybar/config.jsonc
     sl waybar/abyss.css .config/waybar/style.css
     sl ssh/config .ssh/config
+    sl waywall
   ;;
   lethe)
     sl zsh/zshrc .config/zsh/.zshrc

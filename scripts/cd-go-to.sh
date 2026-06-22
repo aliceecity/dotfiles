@@ -10,7 +10,7 @@ if [ "$cwd" != "$HOME" ]; then
 fi
 
 dirs=$(printf '%s\n' "$dirshome" "$dirscurr" | \
-  grep -Ev '/(jason|target)/'
+  grep -Ev '/(instances|jason|target)/'
 )
 
 selected=`echo "$dirs" | fzf --layout=reverse --preview="ls --color=always {}"`
