@@ -13,6 +13,7 @@ in
 
   networking.hostName = "abyss";
   networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.powersave = false;
 
   console.keyMap = "es";
   time.timeZone = "Europe/Madrid";
