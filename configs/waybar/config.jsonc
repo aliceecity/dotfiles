@@ -16,9 +16,14 @@
   },
 
   "clock": {
-    "format": "{:%Y-%m-%d %H:%M} "
+    "format": "{:%Y-%m-%d %H:%M} ",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+        "format": {
+            "today": "<b><i>{}</i></b>"
+        }
+    }
   },
-
 
   "battery": {
     "format": " {icon} {capacity}%",
@@ -39,8 +44,9 @@
   },
 
   "network": {
-    "format-wifi": "{icon}  {essid}",
-    "format-disconnected": "󰖪  Network down",
+    "format-wifi": "{icon} ",
+    "tooltip-format": "{essid}",
+    "format-disconnected": "󰖪 ",
     "format-icons": {
       "wifi": ["󰤟", "󰤢", "󰤥", "󰤨"]
     }
