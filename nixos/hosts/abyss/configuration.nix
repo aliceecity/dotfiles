@@ -14,6 +14,8 @@ in
   networking.hostName = "abyss";
   networking.networkmanager.enable = true;
   networking.networkmanager.wifi.powersave = false;
+  boot.kernelModules = [ "8821ce" ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [ rtl8821ce ];
 
   console.keyMap = "es";
   time.timeZone = "Europe/Madrid";
