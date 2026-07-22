@@ -21,7 +21,8 @@ hl.monitor({
 local terminal = "alacritty"
 
 hl.on("hyprland.start", function () 
-  hl.exec_cmd(terminal)
+  hl.exec_cmd(terminal .. " -e tmux", {workspace = "1"})
+  hl.exec_cmd("firefox", {workspace = "2"})
   hl.exec_cmd("waybar")
   hl.exec_cmd("swaybg -i ~/dotfiles/wallpaper.jpg -m fill")
 end)
