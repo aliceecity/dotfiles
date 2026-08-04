@@ -107,6 +107,8 @@ in
      wl-clipboard
      waybar
 
+     qbittorrent
+
      waywall
      prismlauncher
      jdk21
