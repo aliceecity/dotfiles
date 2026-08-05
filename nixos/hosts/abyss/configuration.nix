@@ -78,7 +78,6 @@ in
 
   environment.systemPackages = (with pkgs; [
      neovim
-     gcc
      bat
      fd
      yazi
@@ -92,6 +91,10 @@ in
      alacritty
      wget
      syncthing
+
+     cargo
+     rustc
+     gcc
 
      vesktop
      qview
