@@ -109,6 +109,7 @@ in
      swaybg
      wl-clipboard
      waybar
+     pavucontrol
 
      qbittorrent
 
