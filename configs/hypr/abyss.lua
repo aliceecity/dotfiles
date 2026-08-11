@@ -26,7 +26,7 @@ hl.workspace_rule({workspace = "name:S", monitor = "DP-1", default = true})
 local terminal = "alacritty"
 
 hl.on("hyprland.start", function () 
-  hl.exec_cmd(terminal .. " -e tmux", {workspace = "1"})
+  hl.exec_cmd(terminal .. " -e tmux new-session -A -s 0 \"remind.sh -n; zsh\"", {workspace = "1"})
   hl.exec_cmd("firefox", {workspace = "2"})
   hl.exec_cmd("vesktop", {workspace = "3"})
   hl.exec_cmd("waybar")
