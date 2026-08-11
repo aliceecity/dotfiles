@@ -54,6 +54,9 @@ hl.config({
     numlock_by_default = true,
     repeat_rate = 50,
     repeat_delay = 200,
+    tablet = {
+      output = "HDMI-A-1"
+    }
   },
 
   cursor = {
