@@ -1,11 +1,13 @@
 #!/bin/sh
 
 reminders="$(dirname "$0")/../secret/reminders"
+actual_date=$(date +%Y%m%d)
 
-while getopts 'n' opt; do
+while getopts 'na' opt; do
   case "$opt" in
     n) mc_names=1 ;;
-    *) exit 2;;
+    a) show_all=1 ;;
+    *) exit 2     ;;
   esac
 done
 
@@ -19,7 +21,14 @@ fi
 echo "reminders:"
 
 for reminder in "${reminders[@]}"; do
+  if [[ "${reminder:0:1}" == ";" && -z "$show_all" ]]; then
+    reminder_date="${reminder:1:8}"
+    if ((reminder_date <= actual_date)); then
+      echo -e " - ${reminder:9}"
+    fi
+  else
     echo -e " - $reminder"
+  fi
 done
 
 if [[ -n $mc_names ]]; then
