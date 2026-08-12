@@ -113,6 +113,8 @@ in
 
      qbittorrent
 
+     krita
+
      waywall
      prismlauncher
      jdk21
