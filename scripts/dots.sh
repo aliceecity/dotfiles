@@ -4,16 +4,11 @@ dots_dir=$(realpath "$0" | awk -F'/' -v OFS='/' '{NF-=2}1')
 
 host=$(hostname)
 
-if [[ "$1" == "-d" ]]; then
-  dry="true"
-fi
+[[ "$1" == "-d" ]] && dry="true"
 
 function sl() {
-  if [[ ! -n $2 ]]; then
-    dest="$HOME/.config/$1"
-  else
-    dest="$HOME/$2"
-  fi
+  [[ ! -n $2 ]] && dest="$HOME/.config/$1"
+                || dest="$HOME/$2"
 
   if [[ -e "$dest" && ! -L "$dest" ]]; then
     echo "$dest already exists and is not a symlink." 

@@ -5,9 +5,7 @@ proc=$(ps -o comm= -t "$tty" | tail -n 1)
 
 cwd=`tmux display-message -p '#{pane_current_path}'`
 dirshome=`fd . ~ --type d -I`
-if [ "$cwd" != "$HOME" ]; then
-  dirscurr=`fd . "$cwd" --type d -I -H`
-fi
+[[ "$cwd" != "$HOME" ]] && dirscurr=`fd . "$cwd" --type d -I -H`
 
 dirs=$(printf '%s\n' "$dirshome" "$dirscurr" | \
   grep -Ev '/(instances|jason|target)/'
@@ -17,7 +15,7 @@ selected=`echo "$dirs" | fzf --layout=reverse --preview="ls --color=always {}"`
 
 if [ -n "$selected" ]; then
   case "$proc" in
-    zsh|bash) tmux send-keys -t "$TMUX_PANE" ^A ^K 'cd ' "\"$selected\"" Enter ^L;;
-      *) tmux neww -c "$selected";;
+    zsh|bash) tmux send-keys -t "$TMUX_PANE" ^A ^K 'cd ' "\"$selected\"" Enter ^L ;;
+           *) tmux neww -c "$selected" ;;
   esac
 fi
