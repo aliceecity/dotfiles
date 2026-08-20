@@ -21,16 +21,25 @@ fi
 echo "reminders:"
 
 for reminder in "${reminders[@]}"; do
-  if [[ "${reminder:0:1}" == ";" && -z "$show_all" ]]; then
-    reminder_date="${reminder:1:8}"
-    if ((reminder_date <= actual_date)); then
-      echo -e " - ${reminder:9}"
-    fi
-  else
-    echo -e " - $reminder"
-  fi
+  case $([[ -n "$show_all" ]] && echo -n "a" || echo -n "${reminder:0:1}") in
+    ";")
+      reminder_date="${reminder:1:8}"
+      ((reminder_date <= actual_date)) && echo -e " - ${reminder:9}"
+      ;;
+    ":")
+      reminder_date="${reminder:1:8}"
+      ((reminder_date == actual_date)) && echo -e " - ${reminder:9}"
+      ;;
+    ",")
+      reminder_date="${reminder:1:8}"
+      days=$((("$(date -d "$reminder_date" +%s)" - "$(date +%s)") / (3600 * 24) + 1))
+      printf "%-50b%3s days left\n" " - ${reminder:9}" "$days"
+      ;;
+    * )
+      echo -e " - $reminder"
+      ;;
+  esac
 done
-
 if [[ -n $mc_names ]]; then
 
   # Wait for internet connection and dns resolution
