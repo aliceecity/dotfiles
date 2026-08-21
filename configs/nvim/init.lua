@@ -9,6 +9,7 @@ require("plugins.mini-move")
 require("plugins.mini-surround")
 require("plugins.oil")
 require("plugins.treesitter")
+require("plugins.lualine")
 
 require("config.snippet")
 
