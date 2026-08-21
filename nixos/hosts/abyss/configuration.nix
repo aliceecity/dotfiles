@@ -100,7 +100,7 @@ in
      vesktop
      qview
      btop
-     vlc
+     mpv
      git
      ffmpeg
 
