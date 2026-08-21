@@ -78,6 +78,7 @@ in
 
   environment.systemPackages = (with pkgs; [
      neovim
+     tree-sitter
      bat
      fd
      yazi

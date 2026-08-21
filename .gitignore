@@ -1,4 +1,4 @@
 *.log
-lazy-lock*
+nvim-pack-lock*
 secret
 wallpaper*

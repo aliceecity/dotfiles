@@ -1,6 +1,1 @@
-return {
-  'nvim-mini/mini.move',
-  config = function()
-    require('mini.move').setup()
-  end,
-}
+require('mini.move').setup()

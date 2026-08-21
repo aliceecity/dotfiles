@@ -112,6 +112,7 @@
     fzf
     tmux
     neovim
+    tree-sitter
     typst
     gcc
     fastfetch
