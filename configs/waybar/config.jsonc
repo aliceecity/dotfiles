@@ -5,6 +5,9 @@
   "modules-center": ["hyprland/window"],
   "modules-left": ["hyprland/workspaces"],
 
+  "hyprland/window": {
+    "max-length": 50,
+  },
 
   "tray": {
     "icon-size": 18,
