@@ -2,6 +2,7 @@
   "layer": "top",
   "position": "bottom",
   "modules-right": ["tray", "network", "backlight", "battery", "pulseaudio", "clock" ],
+  "modules-center": ["hyprland/window"],
   "modules-left": ["hyprland/workspaces"],
 
 
