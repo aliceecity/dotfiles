@@ -15,6 +15,10 @@ local tall_sens = 0.29768304
 
 local overlay_png = mcsr_dir .. "overlay.png"
 local bg_path = mcsr_dir .. "epic_bg.png"
+local crosshair_path = mcsr_dir .. "oneshot.png"
+
+local crosshair_image = nil
+local crosshair_active = nil
 
 local config = {
   input = {
@@ -74,6 +78,23 @@ config.actions = {
   ["*-C"] = function()
     if waywall.get_key("F3") then waywall.show_floating(true) end
     return false
+  end,
+
+  ["*-Y"] = function() 
+    if crosshair_image then
+      crosshair_image:close(); crosshair_image = nil
+    end
+    if crosshair_active then
+      crosshair_active = false
+    else
+      crosshair_active = true
+      crosshair_image = waywall.image(crosshair_path, {
+        dst = {
+          x = 910, y = 490,
+          w = 100, h = 100,
+        }
+      })
+    end
   end,
 }
 
