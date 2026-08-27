@@ -1,5 +1,6 @@
 vim.pack.add({
   { src = "https://github.com/vague-theme/vague.nvim" },
+  { src = "https://github.com/lewis6991/gitsigns.nvim" },
   { src = "https://github.com/numToStr/Comment.nvim" },
   { src = "https://github.com/L3MON4D3/LuaSnip" },
   { src = "https://github.com/nvim-mini/mini.move" },
