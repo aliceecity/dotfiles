@@ -6,7 +6,7 @@
   "modules-left": ["hyprland/workspaces"],
 
   "hyprland/window": {
-    "max-length": 50,
+    "max-length": 50
   },
 
   "tray": {
@@ -59,7 +59,8 @@
     "format-disconnected": "󰖪 ",
     "format-icons": {
       "wifi": ["󰤟", "󰤢", "󰤥", "󰤨"]
-    }
+    },
+    "on-click": "alacritty -e nmtui"
   },
 
   "pulseaudio": {
@@ -68,6 +69,7 @@
     "format-icons": {
       "default": ["󰕿", "󰖀", "󰕾"]
     },
-    "scroll-step": 5
+    "scroll-step": 5,
+    "on-click": "pavucontrol"
   }
 }
