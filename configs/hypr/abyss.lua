@@ -35,6 +35,8 @@ hl.on("hyprland.start", function ()
 end)
 
 hl.window_rule({match = {title = "Discord"}, workspace = "3 silent"})
+hl.window_rule({match = {title = "Steam"}, workspace = "4 silent"})
+hl.window_rule({match = {title = "Volume Control"}, float = true, size = {800, 600}})
 
 hl.config({
   general = {
