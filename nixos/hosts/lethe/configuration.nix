@@ -114,11 +114,14 @@
     neovim
     tree-sitter
     typst
-    gcc
     fastfetch
     alacritty
     wget
     syncthing
+
+    cargo
+    rustc
+    gcc
 
     vesktop
     qview
