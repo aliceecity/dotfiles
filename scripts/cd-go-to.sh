@@ -8,7 +8,8 @@ dirshome=`fd . ~ --type d -I`
 [[ "$cwd" != "$HOME" ]] && dirscurr=`fd . "$cwd" --type d -I -H`
 
 dirs=$(printf '%s\n' "$dirshome" "$dirscurr" | \
-  grep -Ev '/(instances|jason|target)/'
+  grep -Ev '/(instances|jason|target)/' |
+  sort -u
 )
 
 selected=`echo "$dirs" | fzf --layout=reverse --preview="ls --color=always {}"`
