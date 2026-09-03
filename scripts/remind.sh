@@ -33,7 +33,7 @@ for reminder in "${reminders[@]}"; do
     ",")
       reminder_date="${reminder:1:8}"
       days=$((("$(date -d "$reminder_date" +%s)" - "$(date +%s)") / (3600 * 24) + 1))
-      printf "%-50b%3s days left\n" " - ${reminder:9}" "$days"
+      printf "%-50b%3s day%s left\n" " - ${reminder:9}" "$days" "$( ((days != 1)) && echo s )"
       ;;
     * )
       echo -e " - $reminder"
