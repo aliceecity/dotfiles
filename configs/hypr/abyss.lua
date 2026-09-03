@@ -1,12 +1,12 @@
 require("keybinds")({
   terminal = "alacritty",
-  main_monitor = "HDMI-A-1",
+  main_monitor = "DP-1",
   rofi_theme = "abyss.rasi"
 })
 
 -- Main monitor
 hl.monitor({
-  output = "HDMI-A-1",
+  output = "DP-1",
   mode = "1920x1080@144",
   position = "0x0",
   scale = 1,
@@ -14,14 +14,14 @@ hl.monitor({
 
 -- Second monitor
 hl.monitor({
-  output = "DP-1",
+  output = "HDMI-A-1",
   mode = "1920x1080@60",
   position = "-1920x0",
   scale = 1,
 })
 
-hl.workspace_rule({workspace = "r[1-9]", monitor = "HDMI-A-1"})
-hl.workspace_rule({workspace = "name:S", monitor = "DP-1", default = true})
+hl.workspace_rule({workspace = "r[1-9]", monitor = "DP-1"})
+hl.workspace_rule({workspace = "name:S", monitor = "HDMI-A-1", default = true})
 
 local terminal = "alacritty"
 
@@ -57,7 +57,7 @@ hl.config({
     repeat_rate = 50,
     repeat_delay = 200,
     tablet = {
-      output = "HDMI-A-1"
+      output = "DP-1"
     }
   },
 
