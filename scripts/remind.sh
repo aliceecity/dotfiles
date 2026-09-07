@@ -36,19 +36,23 @@ for reminder in "${reminders[@]}"; do
       reminder_minutes="${reminder:11:2}"
       reminder_seconds="${reminder:13:2}"
       diff=$((("$(date -d "$reminder_date" +%s)" - "$(date +%s)") + reminder_hours * 3600 + reminder_minutes * 60 + reminder_seconds))
-      days=$((diff / (3600 * 24)))
-      hours=$(((diff % (3600 * 24)) / 3600))
-      minutes=$(((diff % 3600) / 60))
-      seconds=$((diff % 60))
-      if ((days <3)); then
-        printf "%-50b" " - ${reminder:15}"
-        ((days > 0)) && printf "%3s day%s,"  "$days" "$( ((days != 1)) && echo s )"
-        ((hours > 0)) && printf "%3s hour%s,"  "$hours" "$( ((hours != 1)) && echo s )"
-        ((minutes > 0)) && printf "%3s minute%s and"  "$minutes" "$( ((minutes != 1)) && echo s )"
-        printf "%3s second%s"  "$seconds" "$( ((seconds != 1)) && echo s )"
-        echo
+      if (( diff > 0 )); then
+        days=$((diff / (3600 * 24)))
+        hours=$(((diff % (3600 * 24)) / 3600))
+        minutes=$(((diff % 3600) / 60))
+        seconds=$((diff % 60))
+        if ((days <3)); then
+          printf "%-50b" " - ${reminder:15}"
+          ((days > 0)) && printf "%3s day%s,"  "$days" "$( ((days != 1)) && echo s )"
+          ((hours > 0)) && printf "%3s hour%s,"  "$hours" "$( ((hours != 1)) && echo s )"
+          ((minutes > 0)) && printf "%3s minute%s and"  "$minutes" "$( ((minutes != 1)) && echo s )"
+          printf "%3s second%s"  "$seconds" "$( ((seconds != 1)) && echo s )"
+          echo
+        else
+          printf "%-50b%3s days\n" " - ${reminder:15}" "$days"
+        fi
       else
-        printf "%-50b%3s days\n" " - ${reminder:15}" "$days"
+        printf "%-50b happened\n" " - ${reminder:15}"
       fi
       ;;
     * )
