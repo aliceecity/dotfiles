@@ -8,7 +8,8 @@ vim.pack.add({
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/NMAC427/guess-indent.nvim" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-  { src = "https://github.com/nvim-lualine/lualine.nvim"}
+  { src = "https://github.com/nvim-lualine/lualine.nvim"},
+  { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" }
 })
 
 require("vague").setup({

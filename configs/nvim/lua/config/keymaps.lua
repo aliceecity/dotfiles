@@ -6,6 +6,8 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+vim.keymap.set('n', '<leader>m', '<cmd>:RenderMarkdown set <CR>', { desc = 'toggle markdown rendering' })
+
 vim.keymap.set('n', '<leader>w', '<cmd>:w <CR>', { desc = 'write' })
 vim.keymap.set('n', '<leader>q', '<cmd>:q <CR>', { desc = 'quit' })
 vim.keymap.set({'v', 'x' }, '<leader>n', ':norm ', { desc = 'norm' })
