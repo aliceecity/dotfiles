@@ -97,6 +97,8 @@ in
      rustc
      gcc
 
+     typst
+
      vesktop
      qview
      btop
