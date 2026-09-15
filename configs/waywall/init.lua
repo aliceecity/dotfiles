@@ -44,17 +44,28 @@ local config = {
   },
 }
 
+-- 1883,859 27x26
+helpers.res_mirror({ src = { x = 1884, y = 860, w = 26, h = 23 }, dst = { x = 1476, y = 696, w = 104, h = 92 }, depth = 2, color_key = { input = "#4DE1CA", output = "#4DE1CAFF" } }, 0, 0) -- spawner total %
+helpers.res_mirror({ src = { x = 1884, y = 860, w = 26, h = 23 }, dst = { x = 1480, y = 700, w = 104, h = 92 }, depth = 1, color_key = { input = "#4DE1CA", output = "#133832FF" } }, 0, 0) -- spawner total % (shadow)
+
+helpers.res_mirror({ src = { x = 1828, y = 860, w = 31, h = 23 }, dst = { x = 1452, y = 660, w = 124, h = 92 }, depth = 2, color_key = { input = "#4DE1CA", output = "#4DE1CAFF" } }, 0, 0) -- spawner %
+helpers.res_mirror({ src = { x = 1828, y = 860, w = 31, h = 23 }, dst = { x = 1456, y = 664, w = 124, h = 92 }, depth = 1, color_key = { input = "#4DE1CA", output = "#133832FF" } }, 0, 0) -- spawner % (shadow)
+
 helpers.res_mirror({ src = { x = 252, y = 519, w = 15, h = 21 }, dst = { x = 945, y = 920, w = 30, h = 42 }, depth = 3, color_key = { input = "#DDDDDD", output = "#FF00FFFF" } }, 0, 0) -- difficulty
+
 helpers.res_mirror({ src = { x = 145, y = 7900, w = 30, h = 580 }, dst = { x = 0, y = 315, w = 800, h = 450 } }, 320, 16380) -- eye measuring cropout, 15 pixels each side, 145->130 and 30->60 for 30 on each side
+
 helpers.res_mirror({ src = { x = 0, y = 15980, w = 320, h = 180 }, dst = { x = 1120, y = 610, w = 216, h = 122 } }, 320, 16380) -- tall pie
-helpers.res_mirror({ src = { x = 12, y = 36, w = 38, h = 9 }, dst = { x = 1120, y = 372, w = 216, h = 54 } }, 320, 16380) -- tall ecount
-helpers.res_mirror({ src = { x = 228, y = 16160, w = 26, h = 23 }, dst = { x = 1120, y = 426, w = 216, h = 184 } }, 320, 16380) -- tall 
-helpers.res_mirror({ src = { x = 12, y = 36, w = 38, h = 9 }, dst = { x = 1120, y = 372, w = 216, h = 54 } }, 320, 1080) -- thin ecount
-helpers.res_mirror({ src = { x = 228, y = 860, w = 26, h = 23 }, dst = { x = 1120, y = 426, w = 216, h = 184 } }, 320, 1080) -- thin numbers
 helpers.res_mirror({ src = { x = 0, y = 680, w = 320, h = 180 }, dst = { x = 1120, y = 610, w = 216, h = 122 } }, 320, 1080) -- thin tiny pie
--- helpers.res_mirror({ src = { x = 0, y = 0, w = 840, h = 270 }, dst = { x = 0, y = 0, w = 480, h = 1080 } }, 1920, 270)--1
--- helpers.res_mirror({ src = { x = 840, y = 0, w = 240, h = 270 }, dst = { x = 480, y = 0, w = 960, h = 1080 } }, 1920, 270) -- wide_n 1-3 (special wide, set these h=1080's to 0's to disable)
--- helpers.res_mirror({ src = { x = 1080, y = 0, w = 840, h = 270 }, dst = { x = 1440, y = 0, w = 480, h = 1080 } }, 1920, 270) --3
+helpers.res_mirror({ src = { x = 12, y = 37, w = 37, h = 9 }, dst = { x = 1120, y = 374, w = 216, h = 52 } }, 320, 16380) -- tall ecount
+helpers.res_mirror({ src = { x = 13, y = 37, w = 37, h = 9 }, dst = { x = 1120, y = 374, w = 216, h = 52 } }, 320, 1080) -- thin ecount
+helpers.res_mirror({ src = { x = 1, y = 28, w = 31, h = 9 }, dst = { x = 1120, y = 732, w = 216, h = 63 } }, 320, 16380) -- tall c counter
+helpers.res_mirror({ src = { x = 1, y = 28, w = 31, h = 9 }, dst = { x = 1120, y = 732, w = 216, h = 63 } }, 320, 1080) -- thin c counter
+
+helpers.res_mirror({ src = { x = 228, y = 860, w = 26, h = 23 }, dst = { x = 1120, y = 426, w = 216, h = 184 } }, 320, 1080) -- thin numbers
+
+helpers.res_mirror({ src = { x = 228, y = 16160, w = 26, h = 23 }, dst = { x = 1120, y = 426, w = 216, h = 184 } }, 320, 16380) -- tall 
+
 helpers.res_image(overlay_png, { dst = { x = 0, y = 315, w = 800, h = 450 } }, 320, 16380) -- overlay image
 
 local resolutions = {
