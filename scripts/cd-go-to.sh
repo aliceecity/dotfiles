@@ -1,11 +1,23 @@
 #!/bin/sh
 
 tty=$(tmux display-message -p '#{pane_tty}')
-proc=$(ps -o comm= -t "$tty" | tail -n 1)
+temp=$(ps -o pid=,comm= -t "$tty")
+proc=$(echo "$temp" | tail -n 1 | awk '{print $2}')
+sshpid=$(echo "$temp" | grep ssh | tail -n 1 | awk '{print $1}')
+[[ -n "$sshpid" ]] && ssh_cmd=$(ps -o args= -p "$sshpid")
 
-cwd=`tmux display-message -p '#{pane_current_path}'`
-dirshome=`fd . ~ --type d -I`
-[[ "$cwd" != "$HOME" ]] && dirscurr=`fd . "$cwd" --type d -I -H`
+if [[ -n "$sshpid" ]]; then
+  cwd=$($ssh_cmd "pwd")
+  home=$($ssh_cmd "echo ~")
+  dirshome=$($ssh_cmd "fd . ~ --type d -I")
+  [[ "$cwd" != "$home" ]] && dirscurr=$($ssh_cmd "fd . $cwd --type d -I -H")
+  preview="$ssh_cmd \"TERM=xterm-256color ls --color=always {}\""
+else
+  cwd=`tmux display-message -p '#{pane_current_path}'`
+  dirshome=`fd . ~ --type d -I`
+  [[ "$cwd" != "$HOME" ]] && dirscurr=`fd . "$cwd" --type d -I -H`
+  preview="ls --color=always {}"
+fi
 
 dirs=$(printf '%s\n' "$dirshome" "$dirscurr" | \
   grep -Ev '/(instances|jason|target)/' | \
@@ -13,11 +25,11 @@ dirs=$(printf '%s\n' "$dirshome" "$dirscurr" | \
   sed '/^$/d'
 )
 
-selected=`echo "$dirs" | fzf --layout=reverse --preview="ls --color=always {}"`
+selected=`echo "$dirs" | fzf --layout=reverse --preview="$preview"`
 
 if [ -n "$selected" ]; then
   case "$proc" in
-    zsh|bash) tmux send-keys -t "$TMUX_PANE" ^A ^K 'cd ' "\"$selected\"" Enter ^L ;;
-           *) tmux neww -c "$selected" ;;
+    zsh|bash|ssh) tmux send-keys -t "$TMUX_PANE" ^A ^K 'cd ' "\"$selected\"" Enter ^L ;;
+               *) tmux neww -c "$selected" ;;
   esac
 fi

@@ -13,6 +13,8 @@ vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
 
+vim.o.termguicolors = true
+
 vim.o.showmode = false
 vim.o.signcolumn = 'yes'
 
