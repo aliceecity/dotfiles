@@ -36,7 +36,7 @@ if [[ -n "$sshpid" ]]; then
 fi
 
 if [[ -n "$selected" ]]; then
-  if [[ -n "sshpid" ]]; then
+  if [[ -n "$sshpid" ]]; then
     tmux run-shell "nohup xdg-open $(printf '%q' "$tmp_dir/${selected##*/}") >/dev/null 2>&1 &"
   else
     tmux run-shell "nohup xdg-open $(printf '%q' "$selected") >/dev/null 2>&1 &"
