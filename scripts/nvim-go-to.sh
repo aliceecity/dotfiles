@@ -6,11 +6,27 @@ sshpid=$(echo "$temp" | grep ssh | tail -n 1 | awk '{print $1}')
 [[ -n "$sshpid" ]] && ssh_cmd=$(ps -o args= -p "$sshpid")
 
 if [[ -n "$sshpid" ]]; then
+  editor=nano
+  [[ $($ssh_cmd "command -v vi") ]] && editor=vi
+  [[ $($ssh_cmd "command -v vim") ]] && editor=vim
+  [[ $($ssh_cmd "command -v nvim") ]] && editor=nvim
+
   cwd=$($ssh_cmd "pwd")
   home=$($ssh_cmd "echo ~")
-  fileshome=$($ssh_cmd "fd . ~ -I")
-  [[ "$cwd" != "$home" ]] && filescurr=$($ssh_cmd "fd . $cwd -I -H")
-  preview="$ssh_cmd \"[[ -d {} ]] && ls --color=always {} || bat --color=always --style=plain {}\""
+
+  if [[ $($ssh_cmd "command -v fd") ]]; then
+    fileshome=$($ssh_cmd "fd . ~ -I")
+    [[ "$cwd" != "$home" ]] && filescurr=$($ssh_cmd "fd . $cwd -I -H")
+  else
+    fileshome=$($ssh_cmd "find ~ | grep -v \"/\.\"")
+    [[ "$cwd" != "$home" ]] && filescurr=$($ssh_cmd "find $cwd")
+  fi
+
+  if [[ $($ssh_cmd "command -v bat") ]]; then
+    preview="$ssh_cmd \"[[ -d {} ]] && TERM=xterm-256color ls --color=always {} || bat --color=always --style=plain {}\""
+  else
+    preview="$ssh_cmd \"[[ -d {} ]] && TERM=xterm-256color ls --color=always {} || cat {}\""
+  fi
   hostname_=$($ssh_cmd "hostname")
 else
   cwd=`tmux display-message -p '#{pane_current_path}'`
@@ -30,7 +46,7 @@ selected=`echo "$files" | fzf --layout=reverse --preview="$preview"`
 
 if [[ -n "$selected" ]]; then
   if [[ -n "$sshpid" ]]; then
-    tmux neww -n "$(basename "$selected") [${hostname_:0:1}]" $ssh_cmd -t "nvim $selected"
+    tmux neww -n "$(basename "$selected") [${hostname_:0:1}]" $ssh_cmd -t "$editor $selected"
   else
     tmux neww -n $(basename "$selected") nvim "$selected"
   fi

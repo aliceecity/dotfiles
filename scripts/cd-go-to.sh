@@ -9,8 +9,15 @@ sshpid=$(echo "$temp" | grep ssh | tail -n 1 | awk '{print $1}')
 if [[ -n "$sshpid" ]]; then
   cwd=$($ssh_cmd "pwd")
   home=$($ssh_cmd "echo ~")
-  dirshome=$($ssh_cmd "fd . ~ --type d -I")
-  [[ "$cwd" != "$home" ]] && dirscurr=$($ssh_cmd "fd . $cwd --type d -I -H")
+
+  if [[ $($ssh_cmd "command -v fd") ]]; then
+    dirshome=$($ssh_cmd "fd . ~ --type d -I")
+    [[ "$cwd" != "$home" ]] && dirscurr=$($ssh_cmd "fd . $cwd --type d -I -H")
+  else
+    dirshome=$($ssh_cmd "find ~ -type d | grep -v \"/\.\"")
+    [[ "$cwd" != "$home" ]] && filescurr=$($ssh_cmd "find $cwd | grep \"/$\"")
+  fi
+
   preview="$ssh_cmd \"TERM=xterm-256color ls --color=always {}\""
 else
   cwd=`tmux display-message -p '#{pane_current_path}'`
