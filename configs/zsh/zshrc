@@ -38,3 +38,30 @@ alias v="nvim"
 alias vi="nvim"
 alias ".."="cd .."
 alias ":q"="exit"
+
+cr(){
+  local pager content
+  local opt OPTIND OPTARG
+
+  while getopts 'p:h' opt; do
+    case "$opt" in
+      p) pager=$OPTARG ;;
+      h) echo "Usage: cr [-p pager] [-h] url" ;;
+      *) return 2 ;;
+    esac
+  done
+
+  shift $((OPTIND - 1))
+
+  [[ -z "$1" ]] && return 2
+
+  content=$(curl "$1" 2>/dev/null)
+
+  if [[ -n "$pager" ]]; then
+    echo "$content" | $pager
+  elif (($(echo "$content" | wc -l) > LINES - 4)); then
+    echo "$content" | less
+  else
+    echo "$content"
+  fi
+}
