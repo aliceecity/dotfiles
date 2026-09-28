@@ -27,7 +27,7 @@ else
 fi
 
 dirs=$(printf '%s\n' "$dirshome" "$dirscurr" | \
-  grep -Ev '/(instances|jason|target)/' | \
+  grep -Ev '/(saves|jason|target)/' | \
   sort -u | \
   sed '/^$/d'
 )
