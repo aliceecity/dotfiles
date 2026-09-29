@@ -39,6 +39,37 @@ alias vi="nvim"
 alias ".."="cd .."
 alias ":q"="exit"
 
+reader(){
+  local opt OPTIND=1 OPTARG
+  local pager content
+
+  while getopts 'p:h' opt; do
+    case "$opt" in
+      p) pager=$OPTARG ;;
+      h) echo "Usage: reader [-p pager] [-h] [CONTENT]\n\nRead CONTENT, reads from stdin when it is omitted." ;;
+      *) return 2 ;;
+    esac
+  done
+  shift $((OPTIND - 1))
+
+  if (($#)); then
+    content=$1
+    [[ -f "$content" ]] && content=$(cat "$content")
+  elif [[ ! -t 0 ]]; then
+    content=$(cat)
+  else
+    return 1
+  fi
+
+  if [[ -n "$pager" ]]; then
+    printf '%s\n' "$content" | "$pager"
+  elif (( $(printf '%s\n' "$content" | wc -l) > LINES - 4 )); then
+    printf '%s\n' "$content" | less
+  else
+    printf '%s\n' "$content"
+  fi
+}
+
 cr(){
   local pager content
   local opt OPTIND OPTARG
@@ -57,11 +88,18 @@ cr(){
 
   content=$(curl "$1" 2>/dev/null)
 
-  if [[ -n "$pager" ]]; then
-    echo "$content" | $pager
-  elif (($(echo "$content" | wc -l) > LINES - 4)); then
-    echo "$content" | less
-  else
-    echo "$content"
-  fi
+  reader "$content" -p "$pager"
+}
+
+help(){
+  reader "$(bash -c "help $@")"
+}
+
+kg(){
+  [[ -z "$1" ]] && return 2
+
+  for i in $(pgrep "$1"); do
+    echo "killing PID $i"
+    kill "$i"
+  done
 }
