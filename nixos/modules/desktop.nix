@@ -16,6 +16,7 @@
      wl-clipboard
      waybar
      pavucontrol
+     brightnessctl
   ];
 
   programs.hyprland.enable = true;
