@@ -37,10 +37,17 @@ alias la="ls -lha"
 alias v="nvim"
 alias vi="nvim"
 alias ".."="cd .."
-alias ":q"="exit"
+
+d(){
+  reader "$(du -had1 $1 | sort -rh)"
+}
+
+help(){
+  reader "$(bash -c "help $@")"
+}
 
 reader(){
-  local opt OPTIND=1 OPTARG
+  local opt OPTIND OPTARG
   local pager content
 
   while getopts 'p:h' opt; do
@@ -50,11 +57,11 @@ reader(){
       *) return 2 ;;
     esac
   done
+
   shift $((OPTIND - 1))
 
   if (($#)); then
     content=$1
-    [[ -f "$content" ]] && content=$(cat "$content")
   elif [[ ! -t 0 ]]; then
     content=$(cat)
   else
@@ -88,11 +95,7 @@ cr(){
 
   content=$(curl "$1" 2>/dev/null)
 
-  reader "$content" -p "$pager"
-}
-
-help(){
-  reader "$(bash -c "help $@")"
+  reader -p "$pager" "$content"
 }
 
 kg(){
