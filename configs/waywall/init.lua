@@ -64,7 +64,7 @@ helpers.res_mirror({ src = { x = 1, y = 28, w = 31, h = 9 }, dst = { x = 1120, y
 
 helpers.res_mirror({ src = { x = 228, y = 860, w = 26, h = 23 }, dst = { x = 1120, y = 426, w = 216, h = 184 } }, 320, 1080) -- thin numbers
 
-helpers.res_mirror({ src = { x = 228, y = 16160, w = 26, h = 23 }, dst = { x = 1120, y = 426, w = 216, h = 184 } }, 320, 16380) -- tall 
+helpers.res_mirror({ src = { x = 228, y = 16160, w = 26, h = 23 }, dst = { x = 1120, y = 426, w = 216, h = 184 } }, 320, 16380) -- tall
 
 helpers.res_image(overlay_png, { dst = { x = 0, y = 315, w = 800, h = 450 } }, 320, 16380) -- overlay image
 
@@ -92,7 +92,7 @@ config.actions = {
     return false
   end,
 
-  ["*-Y"] = function() 
+  ["*-Y"] = function()
     if crosshair_image then
       crosshair_image:close(); crosshair_image = nil
     end

@@ -14,16 +14,16 @@
     nixosConfigurations = {
       lethe = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [ 
-          ./hosts/lethe/configuration.nix 
+        modules = [
+          ./hosts/lethe/configuration.nix
         ];
       };
 
       abyss = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = [ 
-          ./hosts/abyss/configuration.nix 
+        modules = [
+          ./hosts/abyss/configuration.nix
         ];
       };
     };

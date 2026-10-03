@@ -11,7 +11,7 @@ function sl() {
                 || dest="$HOME/$2"
 
   if [[ -e "$dest" && ! -L "$dest" ]]; then
-    echo "$dest already exists and is not a symlink." 
+    echo "$dest already exists and is not a symlink."
     return 1
   fi
 

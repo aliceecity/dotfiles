@@ -63,7 +63,7 @@ done
 if [[ -n $mc_names ]]; then
 
   # Wait for internet connection and dns resolution
-  while ! ping -c 1 google.com &> /dev/null; do 
+  while ! ping -c 1 google.com &> /dev/null; do
     sleep 1
   done
 

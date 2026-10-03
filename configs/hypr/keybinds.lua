@@ -40,7 +40,7 @@ return function (args)
   hl.bind("SUPER + C", hl.dsp.exec_cmd("rofi -show drun -theme ~/dotfiles/configs/rofi/" .. rofi_theme))
 
   for i=1,9 do
-    hl.bind("SUPER + " .. i, function() 
+    hl.bind("SUPER + " .. i, function()
       hl.dispatch(hl.dsp.focus({monitor = main_monitor}))
       hl.dispatch(hl.dsp.focus({workspace = i}))
     end)
