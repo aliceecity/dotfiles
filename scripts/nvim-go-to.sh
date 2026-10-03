@@ -46,8 +46,8 @@ selected=$(echo "$files" | fzf --layout=reverse --preview="$preview")
 
 if [[ -n "$selected" ]]; then
   if [[ -n "$sshpid" ]]; then
-    tmux neww -n "$(basename "$selected") [${hostname_:0:1}]" $ssh_cmd -t "$editor $selected"
+    tmux neww -c "${selected%/*}/" -n "$(basename "$selected") [${hostname_:0:1}]" $ssh_cmd -t "$editor $selected"
   else
-    tmux neww -n $(basename "$selected") nvim "$selected"
+    tmux neww -c "${selected%/*}/" -n $(basename "$selected") nvim "$selected"
   fi
 fi

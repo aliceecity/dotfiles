@@ -37,8 +37,8 @@ selected=$(printf '%s\n' "$result" | sed -n '2p')
 
 if [[ -n "$selected" ]]; then
   if [[ -n "$sshpid" ]]; then
-    tmux neww -n "${selected##*/} [${hostname_:0:1}]" $ssh_cmd -t "nvim -c \"/\\v$query\" $selected"
+    tmux neww -c "${selected%/*}/" -n "${selected##*/} [${hostname_:0:1}]" $ssh_cmd -t "nvim -c \"/\\v$query\" $selected"
   else
-    tmux neww -n "${selected##*/}" nvim -c "/\\v$query" "$selected"
+    tmux neww -c "${selected%/*}/" -n "${selected##*/}" nvim -c "/\\v$query" "$selected"
   fi
 fi
