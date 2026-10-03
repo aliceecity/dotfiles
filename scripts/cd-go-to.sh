@@ -20,9 +20,9 @@ if [[ -n "$sshpid" ]]; then
 
   preview="$ssh_cmd \"TERM=xterm-256color ls --color=always {}\""
 else
-  cwd=`tmux display-message -p '#{pane_current_path}'`
-  dirshome=`fd . ~ --type d -I`
-  [[ "$cwd" != "$HOME" ]] && dirscurr=`fd . "$cwd" --type d -I -H`
+  cwd=$(tmux display-message -p '#{pane_current_path}')
+  dirshome=$(fd . ~ --type d -I)
+  [[ "$cwd" != "$HOME" ]] && dirscurr=$(fd . "$cwd" --type d -I -H)
   preview="ls --color=always {}"
 fi
 
@@ -32,7 +32,7 @@ dirs=$(printf '%s\n' "$dirshome" "$dirscurr" | \
   sed '/^$/d'
 )
 
-selected=`echo "$dirs" | fzf --layout=reverse --preview="$preview"`
+selected=$(echo "$dirs" | fzf --layout=reverse --preview="$preview")
 
 if [ -n "$selected" ]; then
   case "$proc" in

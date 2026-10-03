@@ -17,9 +17,9 @@ if [[ -n "$sshpid" ]]; then
     [[ "$cwd" != "$home" ]] && filescurr=$($ssh_cmd "find $cwd -type f")
   fi
 else
-  cwd=`tmux display-message -p '#{pane_current_path}'`
-  fileshome=`fd . ~ --type f -I`
-  [[ "$cwd" != "$HOME" ]] && filescurr=`fd . "$cwd" --type f -I -H`
+  cwd=$(tmux display-message -p '#{pane_current_path}')
+  fileshome=$(fd . ~ --type f -I)
+  [[ "$cwd" != "$HOME" ]] && filescurr=$(fd . "$cwd" --type f -I -H)
 fi
 
 files=$(printf '%s\n' "$fileshome" "$filescurr" | \
@@ -30,7 +30,7 @@ files=$(printf '%s\n' "$fileshome" "$filescurr" | \
   sed '/^$/d'
 )
 
-selected=`echo "$files" | fzf --layout=reverse`
+selected=$(echo "$files" | fzf --layout=reverse)
 
 if [[ -n "$sshpid" ]]; then
   md5_=$($ssh_cmd "md5sum '$selected'")

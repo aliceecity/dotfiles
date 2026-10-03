@@ -29,9 +29,9 @@ if [[ -n "$sshpid" ]]; then
   fi
   hostname_=$($ssh_cmd "hostname")
 else
-  cwd=`tmux display-message -p '#{pane_current_path}'`
-  fileshome=`fd . ~ -I`
-  [[ "$cwd" != "$HOME" ]] && filescurr=`fd . "$cwd" -I -H`
+  cwd=$(tmux display-message -p '#{pane_current_path}')
+  fileshome=$(fd . ~ -I)
+  [[ "$cwd" != "$HOME" ]] && filescurr=$(fd . "$cwd" -I -H)
   preview="[[ -d {} ]] && ls --color=always {} || bat --color=always --style=plain {}"
 fi
 
@@ -42,7 +42,7 @@ files=$(printf '%s\n' "$fileshome" "$filescurr" | \
   sed '/^$/d'
 )
 
-selected=`echo "$files" | fzf --layout=reverse --preview="$preview"`
+selected=$(echo "$files" | fzf --layout=reverse --preview="$preview")
 
 if [[ -n "$selected" ]]; then
   if [[ -n "$sshpid" ]]; then
