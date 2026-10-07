@@ -51,7 +51,7 @@ helpers.res_mirror({ src = { x = 1884, y = 860, w = 26, h = 23 }, dst = { x = 14
 helpers.res_mirror({ src = { x = 1828, y = 860, w = 31, h = 23 }, dst = { x = 1452, y = 660, w = 124, h = 92 }, depth = 2, color_key = { input = "#4DE1CA", output = "#4DE1CAFF" } }, 0, 0) -- spawner %
 helpers.res_mirror({ src = { x = 1828, y = 860, w = 31, h = 23 }, dst = { x = 1456, y = 664, w = 124, h = 92 }, depth = 1, color_key = { input = "#4DE1CA", output = "#133832FF" } }, 0, 0) -- spawner % (shadow)
 
-helpers.res_mirror({ src = { x = 252, y = 519, w = 15, h = 21 }, dst = { x = 945, y = 920, w = 30, h = 42 }, depth = 3, color_key = { input = "#DDDDDD", output = "#FF00FFFF" } }, 0, 0) -- difficulty
+helpers.res_mirror({ src = { x = 252, y = 519, w = 15, h = 21 }, dst = { x = 945, y = 576, w = 30, h = 42 }, depth = 3, color_key = { input = "#DDDDDD", output = "#FF0000FF" } }, 0, 0) -- difficulty
 
 helpers.res_mirror({ src = { x = 145, y = 7900, w = 30, h = 580 }, dst = { x = 0, y = 315, w = 800, h = 450 } }, 320, 16380) -- eye measuring cropout, 15 pixels each side, 145->130 and 30->60 for 30 on each side
 
