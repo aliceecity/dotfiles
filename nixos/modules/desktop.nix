@@ -19,6 +19,11 @@
      brightnessctl
   ];
 
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
   programs.hyprland.enable = true;
 
   programs.firefox.enable = true;

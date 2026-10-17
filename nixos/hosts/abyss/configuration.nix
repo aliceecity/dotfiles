@@ -24,6 +24,19 @@ in
     packages = with pkgs; [];
   };
 
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = false;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
+  programs.obs-studio = {
+    enable = true;
+    package = (pkgs.obs-studio.override { cudaSupport = true; });
+  };
+
   environment.systemPackages = (with pkgs; [
      hyfetch
 
@@ -32,7 +45,6 @@ in
      waywall
      prismlauncher
      jdk21
-     obs-studio
   ]) ++ [
      mcsrPkgs.ninjabrain-bot
   ];
