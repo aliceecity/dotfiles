@@ -106,8 +106,6 @@ config.actions = {
     else
       coords_active = true
 
-      --
-
       coord_mirrors[1] = waywall.mirror({ src = { x =   99, y = 300, w = 321, h = 27 }, dst = { x = 850, y = 438, w = 321, h = 27 }, depth = 3, color_key = { input = "#DDDDDD", output = "#00FF00FF" }}, 0, 0) -- block coords
       coord_mirrors[2] = waywall.mirror({ src = { x =  111, y = 327, w = 111, h = 27 }, dst = { x = 981, y = 465, w = 111, h = 27 }, depth = 3, color_key = { input = "#DDDDDD", output = "#00FF00FF" }}, 0, 0) -- chunk coords
       coord_mirrors[3] = waywall.mirror({ src = { x =  525, y = 354, w = 125, h = 27 }, dst = { x = 850, y = 465, w = 125, h = 27 }, depth = 3, color_key = { input = "#DDDDDD", output = "#FF0000FF" } }, 0, 0) -- looking angle
