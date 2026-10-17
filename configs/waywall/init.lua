@@ -20,6 +20,9 @@ local crosshair_path = mcsr_dir .. "oneshot.png"
 local crosshair_image = nil
 local crosshair_active = nil
 
+local coords_active = false
+local coord_mirrors = {}
+
 local config = {
   input = {
     layout = "es",
@@ -44,7 +47,6 @@ local config = {
   },
 }
 
--- 1883,859 27x26
 helpers.res_mirror({ src = { x = 1884, y = 860, w = 26, h = 23 }, dst = { x = 1476, y = 696, w = 104, h = 92 }, depth = 2, color_key = { input = "#4DE1CA", output = "#4DE1CAFF" } }, 0, 0) -- spawner total %
 helpers.res_mirror({ src = { x = 1884, y = 860, w = 26, h = 23 }, dst = { x = 1480, y = 700, w = 104, h = 92 }, depth = 1, color_key = { input = "#4DE1CA", output = "#133832FF" } }, 0, 0) -- spawner total % (shadow)
 
@@ -90,6 +92,27 @@ config.actions = {
   ["*-C"] = function()
     if waywall.get_key("F3") then waywall.show_floating(true) end
     return false
+  end,
+
+  ["*-U"] = function()
+    if coords_active then
+      coords_active = false
+
+      for _, mirror in pairs(coord_mirrors) do
+        mirror:close()
+      end
+
+      coord_mirrors = {}
+    else
+      coords_active = true
+
+      --
+
+      coord_mirrors[1] = waywall.mirror({ src = { x =   99, y = 300, w = 321, h = 27 }, dst = { x = 850, y = 438, w = 321, h = 27 }, depth = 3, color_key = { input = "#DDDDDD", output = "#00FF00FF" }}, 0, 0) -- block coords
+      coord_mirrors[2] = waywall.mirror({ src = { x =  111, y = 327, w = 111, h = 27 }, dst = { x = 981, y = 465, w = 111, h = 27 }, depth = 3, color_key = { input = "#DDDDDD", output = "#00FF00FF" }}, 0, 0) -- chunk coords
+      coord_mirrors[3] = waywall.mirror({ src = { x =  525, y = 354, w = 125, h = 27 }, dst = { x = 850, y = 465, w = 125, h = 27 }, depth = 3, color_key = { input = "#DDDDDD", output = "#FF0000FF" } }, 0, 0) -- looking angle
+      coord_mirrors[4] = waywall.mirror({ src = { x = 1695, y = 273, w = 222, h = 27 }, dst = { x = 850, y = 492, w = 222, h = 27 }, depth = 3, color_key = { input = "#DDDDDD", output = "#FFFF00FF" } }, 0, 0) -- targeted block coords
+    end
   end,
 
   ["*-Y"] = function()
