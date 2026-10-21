@@ -10,6 +10,10 @@ zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"
 
 eval "$(fzf --zsh)"
 
+# TS PMO
+eval "rmdir ~/Desktop 2>/dev/null"
+eval "rmdir ~/Downloads 2>/dev/null"
+
 bindkey -e
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
