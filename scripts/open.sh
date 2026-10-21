@@ -23,7 +23,7 @@ else
 fi
 
 files=$(printf '%s\n' "$fileshome" "$filescurr" | \
-  grep -Ev --ignore-case '\.(txt|srt|bin|class|dat|dds|diff|gpg|gradle|gz|jar|java|js|l|y|mas2j|old|output|[Gg]bx|sh|c|rs|nix|md|lock|o|toml|h|lua|asl|py|json|rasi|html|css|conf|jsonc|log)$' | \
+  grep -Ev --ignore-case '\.(txt|typ|srt|bin|class|dat|dds|diff|gpg|gradle|gz|jar|java|js|l|y|mas2j|old|output|[Gg]bx|sh|c|rs|nix|md|lock|o|toml|h|lua|asl|py|json|rasi|html|css|conf|jsonc|log)$' | \
   grep -Ev '^.*/[^\.]*$' | \
   grep -Ev '/(saves|jason|target|records)/' | \
   sort -u | \
