@@ -8,6 +8,8 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('n', '<leader>m', '<cmd>:RenderMarkdown set <CR>', { desc = 'toggle markdown rendering' })
 
+vim.keymap.set('n', '<leader>t', '<cmd>:TypstPreview<CR>', { desc = 'launch typst-preview' })
+
 vim.keymap.set('n', '<leader>w', '<cmd>:w <CR>', { desc = 'write' })
 vim.keymap.set('n', '<leader>q', '<cmd>:q <CR>', { desc = 'quit' })
 vim.keymap.set({'v', 'x' }, '<leader>n', ':norm ', { desc = 'norm' })

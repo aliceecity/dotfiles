@@ -10,6 +10,7 @@ require("plugins.mini-surround")
 require("plugins.oil")
 require("plugins.treesitter")
 require("plugins.lualine")
+require("plugins.typst-preview")
 
 require("config.snippet")
 

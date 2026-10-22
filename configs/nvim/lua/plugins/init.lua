@@ -9,7 +9,8 @@ vim.pack.add({
   { src = "https://github.com/NMAC427/guess-indent.nvim" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
   { src = "https://github.com/nvim-lualine/lualine.nvim"},
-  { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" }
+  { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
+  { src = "https://github.com/chomosuke/typst-preview.nvim" }
 })
 
 require("vague").setup({

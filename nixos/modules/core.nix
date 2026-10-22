@@ -43,6 +43,8 @@
 
     git
     ffmpeg
+
+    tinymist
   ];
 
   system.stateVersion = "26.05";
