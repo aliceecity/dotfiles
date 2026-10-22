@@ -18,6 +18,8 @@ else
   exit 1
 fi
 
+[[ -z "${reminders[@]}" ]] && exit
+
 echo "reminders:"
 
 for reminder in "${reminders[@]}"; do
