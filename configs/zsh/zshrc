@@ -31,6 +31,7 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+setopt autocd
 
 path+=("$HOME/dotfiles/scripts")
 export PATH
@@ -40,7 +41,6 @@ alias l="ls -lh"
 alias la="ls -lha"
 alias v="nvim"
 alias vi="nvim"
-alias ".."="cd .."
 
 d(){
   reader "$(du -had1 $1 | sort -rh)"
