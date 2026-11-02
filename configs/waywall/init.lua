@@ -35,6 +35,9 @@ local config = {
     sensitivity = normal_sens,
 
     confine_pointer = true,
+
+    repeat_rate = 250,
+    repeat_delay = 150,
   },
 
   theme = {
