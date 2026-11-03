@@ -13,7 +13,7 @@ vim.keymap.set('n', '<leader>t', '<cmd>:TypstPreview<CR>', { desc = 'launch typs
 vim.keymap.set('n', '<leader>zc', '1z=', { desc = 'correct with first suggestion' })
 vim.keymap.set('n', '<leader>ze', '<cmd>:set spell spelllang=en_us<CR>', { desc = 'english spellcheck on' })
 vim.keymap.set('n', '<leader>zs', '<cmd>:set spell spelllang=es<CR>', { desc = 'spanish spellcheck on' })
-vim.keymap.set('n', '<leader>zo', '<cmd>:set nospell<CR>', { desc = 'spanish spellcheck on' })
+vim.keymap.set('n', '<leader>zo', '<cmd>:set nospell<CR>', { desc = 'spellcheck off' })
 vim.keymap.set('n', '<leader>a', function()
   local accents = {
     ["a"] = "á", ["á"] = "a",
