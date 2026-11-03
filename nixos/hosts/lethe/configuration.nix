@@ -7,6 +7,7 @@
       ../../modules/core.nix
       ../../modules/desktop.nix
       ../../modules/locale.nix
+      ../../modules/uni.nix
     ];
 
   networking.hostName = "lethe";
