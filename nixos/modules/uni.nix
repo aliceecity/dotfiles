@@ -1,8 +1,12 @@
 { pkgs, ... }:
 
 {
+  virtualisation.virtualbox.host = {
+    enable = true;
+    enableExtensionPack = true;
+  };
+
   environment.systemPackages = with pkgs; [
     jdk21
-    virtualbox
   ];
 }
