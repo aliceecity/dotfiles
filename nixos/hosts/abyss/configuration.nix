@@ -45,7 +45,7 @@ in
 
      waywall
      prismlauncher
-     jdk21
+     jdk25
   ]) ++ [
      mcsrPkgs.ninjabrain-bot
   ];
