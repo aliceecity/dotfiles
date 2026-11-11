@@ -52,7 +52,7 @@ local config = {
 
 -- 1588,856 18x30
 helpers.res_mirror({ src = { x = 1590, y = 860, w = 13, h = 23 }, dst = { x = 1524, y = 732, w = 52, h = 92 }, depth = 2, color_key = { input = "#4DE1CA", output = "#4DE1CAFF" } }, 0, 0) -- spawner directory number
-helpers.res_mirror({ src = { x = 1590, y = 860, w = 13, h = 23 }, dst = { x = 1528, y = 736, w = 52, h = 92 }, depth = 2, color_key = { input = "#4DE1CA", output = "#133832FF" } }, 0, 0) -- spawner directory number
+helpers.res_mirror({ src = { x = 1590, y = 860, w = 13, h = 23 }, dst = { x = 1528, y = 736, w = 52, h = 92 }, depth = 1, color_key = { input = "#4DE1CA", output = "#133832FF" } }, 0, 0) -- spawner directory number
 
 helpers.res_mirror({ src = { x = 1884, y = 860, w = 26, h = 23 }, dst = { x = 1476, y = 696, w = 104, h = 92 }, depth = 2, color_key = { input = "#4DE1CA", output = "#4DE1CAFF" } }, 0, 0) -- spawner total %
 helpers.res_mirror({ src = { x = 1884, y = 860, w = 26, h = 23 }, dst = { x = 1480, y = 700, w = 104, h = 92 }, depth = 1, color_key = { input = "#4DE1CA", output = "#133832FF" } }, 0, 0) -- spawner total % (shadow)
