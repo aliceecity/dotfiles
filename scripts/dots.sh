@@ -7,8 +7,7 @@ host=$(hostname)
 [[ "$1" == "-d" ]] && dry="true"
 
 function sl() {
-  [[ ! -n $2 ]] && dest="$HOME/.config/$1"
-                || dest="$HOME/$2"
+  [[ ! -n $2 ]] && dest="$HOME/.config/$1" || dest="$HOME/$2"
 
   if [[ -e "$dest" && ! -L "$dest" ]]; then
     echo "$dest already exists and is not a symlink."
@@ -41,6 +40,7 @@ case "$host" in
     sl nvim
     sl git
     sl hypr/keybinds.lua
+    sl hypr/rules.lua
     sl hypr/abyss.lua .config/hypr/hyprland.lua
     hyprctl reload &> /dev/null
     sl alacritty
@@ -58,6 +58,7 @@ case "$host" in
     sl nvim
     sl git
     sl hypr/keybinds.lua
+    sl hypr/rules.lua
     sl hypr/lethe.lua .config/hypr/hyprland.lua
     hyprctl reload &> /dev/null
     sl alacritty

@@ -1,3 +1,4 @@
+require("rules")
 require("keybinds")({
   terminal = "alacritty",
   main_monitor = "eDP-1",

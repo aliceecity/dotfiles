@@ -1,3 +1,4 @@
+require("rules")
 require("keybinds")({
   terminal = "alacritty",
   main_monitor = "HDMI-A-1",
@@ -33,13 +34,6 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("swaybg -i ~/dotfiles/wallpaper.jpg -m fill")
   hl.dsp.focus({workspace = "1"})
 end)
-
-hl.window_rule({match = {class = ".*vesktop.*"}, workspace = "3 silent"})
-hl.window_rule({match = {class = ".*steam.*"}, workspace = "4 silent"})
-hl.window_rule({match = {title = "waywall"}, workspace = "4 silent", idle_inhibit = "always"})
-hl.window_rule({match = {class = ".*prism.*"}, workspace = "4 silent"})
-hl.window_rule({match = {class = "krita"}, workspace = "4 silent"})
-hl.window_rule({match = {title = "Volume Control"}, float = true, size = {800, 600}})
 
 hl.config({
   general = {
