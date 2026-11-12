@@ -11,9 +11,8 @@ hl.window_rule({
 )
 
 hl.window_rule({
-  name  = "firefox-pip",
   match = { class = "^(firefox)$", title = "^(Picture-in-Picture)$" },
   float = true,
   pin   = true,
-  size  = "800 450",
+  size  = "480 270",
 })
