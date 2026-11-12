@@ -44,8 +44,10 @@ in
      krita
 
      waywall
-     prismlauncher
-     jdk25
+     jdk17
+     (prismlauncher.override {
+      additionalLibs = [ libxt libxtst libxkbcommon jemalloc ];
+      })
   ]) ++ [
      mcsrPkgs.ninjabrain-bot
   ];
