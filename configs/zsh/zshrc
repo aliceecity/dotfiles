@@ -50,6 +50,35 @@ help(){
   reader "$(bash -c "help $@")"
 }
 
+rn(){
+  local tmpfile
+
+  if [[ -z "$1" ]]; then
+    nvim .
+    return 2
+  fi
+
+  if [[ ! -e "$1" ]]; then
+    echo "cannot rename $1: no such file or directory"
+    return 2
+  fi
+
+  tmpfile=$(mktemp "/tmp/rn-XXXXXX")
+
+  echo "$1" > "$tmpfile"
+
+  nvim "$tmpfile"
+
+  if [[ -e "$(cat $tmpfile)" ]]; then
+    echo "$(cat $tmpfile) already exists"
+    return 1
+  fi
+
+  mv "$1" "$(cat $tmpfile)"
+
+  rm "$tmpfile"
+}
+
 reader(){
   local opt OPTIND OPTARG
   local pager content
