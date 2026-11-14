@@ -39,6 +39,7 @@ case "$host" in
     sl tmux/abyss.conf .config/tmux/colors.conf
     sl nvim
     sl git
+    sl mpv
     sl hypr/keybinds.lua
     sl hypr/rules.lua
     sl hypr/abyss.lua .config/hypr/hyprland.lua
@@ -57,6 +58,7 @@ case "$host" in
     sl tmux/lethe.conf .config/tmux/colors.conf
     sl nvim
     sl git
+    sl mpv
     sl hypr/keybinds.lua
     sl hypr/rules.lua
     sl hypr/lethe.lua .config/hypr/hyprland.lua
