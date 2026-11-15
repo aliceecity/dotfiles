@@ -34,7 +34,7 @@ return function (args)
 
   hl.bind("SUPER + T", hl.dsp.window.float())
   hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = 0 }))
-  hl.bind("SUPER + Z", hl.dsp.window.fullscreen({ mode = 1 }))
+  hl.bind("SUPER + A", hl.dsp.window.fullscreen({ mode = 1 }))
 
   hl.bind("SUPER + Tab", hl.dsp.window.cycle_next())
 
