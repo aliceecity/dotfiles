@@ -12,10 +12,19 @@
 
   networking.hostName = "lethe";
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
   users.users.sancho = {
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "sancho";
     extraGroups = [ "video" "input" "seat" "networkmanager" "wheel" ];
   };
+
+  environment.systemPackages = with pkgs; [
+    bluetuith
+  ];
 }
