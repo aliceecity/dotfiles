@@ -10,6 +10,8 @@ vim.keymap.set('n', '<leader>m', '<cmd>:RenderMarkdown set <CR>', { desc = 'togg
 
 vim.keymap.set('n', '<leader>t', '<cmd>:TypstPreview<CR>', { desc = 'launch typst-preview' })
 
+vim.keymap.set('n', '<leader>c', ':!', { desc = 'command line command' })
+
 vim.keymap.set('n', '<leader>zc', '1z=', { desc = 'correct with first suggestion' })
 vim.keymap.set('n', '<leader>ze', '<cmd>:set spell spelllang=en_us<CR>', { desc = 'english spellcheck on' })
 vim.keymap.set('n', '<leader>zs', '<cmd>:set spell spelllang=es<CR>', { desc = 'spanish spellcheck on' })
