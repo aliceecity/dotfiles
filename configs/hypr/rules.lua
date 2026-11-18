@@ -8,12 +8,13 @@ hl.window_rule({match = {class = "krita"}, workspace = "4 silent"})
 hl.window_rule({
   match = {title = "Volume Control"},
   float = true,
-  size = {800, 600}}
-)
+  size  = {800, 600}
+})
 
 hl.window_rule({
   match = { class = "^(firefox)$", title = "^(Picture-in-Picture)$" },
   float = true,
   pin   = true,
-  size  = "480 270",
+  size  = {480, 270},
+  move  = {1423, 754}
 })
