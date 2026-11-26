@@ -37,6 +37,8 @@
 
     gcc
 
+    python3
+
     typst
 
     btop
